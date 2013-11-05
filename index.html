@@ -21,14 +21,163 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 </script>
-<link rel="stylesheet" type="text/css" href="css/styles.css">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 <script src="lib/mustache.js"></script>
 <title>Digital Character Sheet</title>
 </head>
 <body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">D&D Digital Character Sheet</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Create New Character</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Character <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Current Character</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<div id="character" class="panel panel-default">
+    <div class="panel-heading">Character</div>
+    <div class="panel-body">
+    	<img src="..." alt="..." width=100 class="img-thumbnail">
+
+		<form class="form-horizontal">
+		  <div class="form-group">
+		    <label class="col-sm-4 control-label">Name</label>
+		    <div class="col-sm-8">
+		      <p type="email" class="form-control">Name</p>
+		    </div>
+		    <label class="col-sm-4 control-label">Class</label>
+		    <div class="col-sm-8">
+		      <p type="email" class="form-control">Class</p>
+		    </div>
+		    <label class="col-sm-4 control-label">Race</label>
+		    <div class="col-sm-8">
+		      <p type="email" class="form-control">Race</p>
+		    </div>
+			<label class="col-sm-4 control-label">HP</label>
+		    <div class="col-sm-8">
+		      <p type="email" class="form-control">Hit Points</p>
+		    </div>
+			<label class="col-sm-4 control-label">AC</label>
+		    <div class="col-sm-8">
+		      <p type="email" class="form-control">Armor Class</p>
+		    </div>
+			<label class="col-sm-4 control-label">Race</label>
+		    <div class="col-sm-8">
+		      <p type="email" class="form-control">Race</p>
+		    </div>
+		  </div>
+		</form>
+    </div>
+</div>
+
+<div id="abilities" class="panel panel-default">
+    <div class="panel-heading">Abilities</div>
+    <div class="panel-body">
+        <table class="table table-hover">
+        	<tr>
+	        	<td>STR</td>
+	        	<td>12</td>
+	        	<td>+1</td>
+        	</tr>
+        	<tr>
+	        	<td>DEX</td>
+	        	<td>10</td>
+	        	<td>+0</td>
+        	</tr>
+        	<tr>
+	        	<td>CON</td>
+	        	<td>8</td>
+	        	<td>-1</td>
+        	</tr>
+        	<tr>
+	        	<td>WIS</td>
+	        	<td>12</td>
+	        	<td>+1</td>
+        	</tr>
+        	<tr>
+	        	<td>CHA</td>
+	        	<td>16</td>
+	        	<td>+3</td>
+        	</tr>
+        	<tr>
+	        	<td>INT</td>
+	        	<td>6</td>
+	        	<td>-2</td>
+        	</tr> 			
+		</table>
+    </div>
+</div>
+
+<div id="skills" class="panel panel-default">
+    <div class="panel-heading">Skills</div>
+    <div class="panel-body">
+		<table class="table table-hover">
+		    <tr>
+				<td>[ ]</td>
+				<td>athletics</td>
+				<td>Roll</td>
+		    </tr>
+		    <tr>
+				<td>[ ]</td>
+				<td>perception</td>
+				<td>Roll</td>
+		    </tr>
+		    <tr>
+				<td>[ ]</td>
+				<td>concentration</td>
+				<td>Roll</td>
+		    </tr>
+		</table>
+		<button class="btn btn-primary btn-block">Add Skill</button>
+    </div>
+</div>
+
+<div id="attacks" class="panel panel-default">
+    <div class="panel-heading">Attacks</div>
+    <div class="panel-body">
+        <table class="table table-hover">
+		    <tr>
+				<td>[ ]</td>
+				<td>fireball</td>
+				<td>Roll</td>
+		    </tr>
+		    <tr>
+				<td>[ ]</td>
+				<td>shortsword</td>
+				<td>Roll</td>
+		    </tr>
+		    <tr>
+				<td>[ ]</td>
+				<td>fists</td>
+				<td>Roll</td>
+		    </tr>
+		</table>
+		<button class="btn btn-primary btn-block">Add Attack</button>
+    </div>
+</div>
 
 </body></html>

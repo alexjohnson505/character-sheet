@@ -1,0 +1,23 @@
+body {
+	background-color: #efefef;
+}
+.panel {
+	float: left;
+	width: 250px;
+	margin: 15px 2px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px 4px 0 0;
+	box-shadow: none;
+}
+h2 {
+	font-size: 2em;
+}
+#character img {
+	display: block;
+	margin: 10px auto;
+
+}
+.form-control:hover {
+	border: 1px solid #428bca;
+}
