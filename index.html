@@ -23,6 +23,8 @@
 </script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="data.js"></script>
+<script src="functions.js"></script>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -61,33 +63,29 @@
 <div id="character" class="panel panel-default">
     <div class="panel-heading">Character</div>
     <div class="panel-body">
-    	<img src="..." alt="..." width=100 class="img-thumbnail">
+    	<img src="" alt="..." width=100 class="img-thumbnail">
 
 		<form class="form-horizontal">
 		  <div class="form-group">
 		    <label class="col-sm-4 control-label">Name</label>
 		    <div class="col-sm-8">
-		      <p type="email" class="form-control">Name</p>
+		      <p type="email" class="form-control">Joe Shmoe</p>
 		    </div>
 		    <label class="col-sm-4 control-label">Class</label>
 		    <div class="col-sm-8">
-		      <p type="email" class="form-control">Class</p>
+		      <p type="email" class="form-control">Barbarian</p>
 		    </div>
 		    <label class="col-sm-4 control-label">Race</label>
 		    <div class="col-sm-8">
-		      <p type="email" class="form-control">Race</p>
+		      <p type="email" class="form-control">Half-elf</p>
 		    </div>
 			<label class="col-sm-4 control-label">HP</label>
 		    <div class="col-sm-8">
-		      <p type="email" class="form-control">Hit Points</p>
+		      <p type="email" class="form-control">27 Hit Points</p>
 		    </div>
 			<label class="col-sm-4 control-label">AC</label>
 		    <div class="col-sm-8">
-		      <p type="email" class="form-control">Armor Class</p>
-		    </div>
-			<label class="col-sm-4 control-label">Race</label>
-		    <div class="col-sm-8">
-		      <p type="email" class="form-control">Race</p>
+		      <p type="email" class="form-control">12 Armor Class</p>
 		    </div>
 		  </div>
 		</form>
@@ -152,7 +150,7 @@
 				<td>Roll</td>
 		    </tr>
 		</table>
-		<button class="btn btn-primary btn-block">Add Skill</button>
+		<button class="btn btn-primary btn-block" onclick="addModal('skills');">Add Skill</button>
     </div>
 </div>
 
@@ -176,8 +174,28 @@
 				<td>Roll</td>
 		    </tr>
 		</table>
-		<button class="btn btn-primary btn-block">Add Attack</button>
+		<button type="button" class="btn btn-primary btn-block"onclick="addModal('attacks');">Add Attack</button>
     </div>
 </div>
+
+<!-- MODALS -->
+<div id="add-modal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Title</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 
 </body></html>

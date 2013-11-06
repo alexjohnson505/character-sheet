@@ -1,0 +1,34 @@
+{"character": {
+    "name": "Jpe SHMOE",
+    "class": "Fighter",
+    "race": "Half-Orc",
+    "hp": {
+        "001" : {
+            "time": "9:54 PM 11/5/2013",
+            "amount": 15,
+            "description": "Arrow to face"
+        },
+        "002" : {
+            "time": "9:55 PM 11/5/2013",
+            "amount": 10,
+            "description": "It was a fire Arrow"
+        }
+    },
+    "ac": 21,
+    "str": 12,
+    "dex": 10,
+    "con": 8,
+    "wis": 12,
+    "cha": 16,
+    "int": 6,
+    "skills" : {
+        "name" : "description",
+        "name" : "description",
+        "name" : "description",
+    },
+    "attacks" : {
+        "name" : "description",
+        "name" : "description",
+        "name" : "description",
+    }
+}}
