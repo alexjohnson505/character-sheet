@@ -7,6 +7,6 @@ function loadJSON() {
 } 
 function addModal(target) {
 	$('#add-modal .modal-title').html("TITLEYEA");
-	$('#add-modal .modal-body').html("yeah");
+	// $('#add-modal .modal-body').html("yeah");
 	$('#add-modal').modal('show');
 }

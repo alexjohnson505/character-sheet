@@ -21,3 +21,25 @@ h2 {
 .form-control:hover {
 	border: 1px solid #428bca;
 }
+.fa {
+	padding-right:5px;
+}
+.img-thumbnail {
+	margin-bottom: 20px;	
+}
+.img-thumbnail i {
+	font-size: 100px;
+	color: #ddd;
+	margin: 0 auto;
+}
+.die {
+	width:30px;
+	height:20px;
+	background-image:url('../images/A_Die_clip_art.svg');
+	background-size:23px 23px;
+	background-repeat:no-repeat;
+	background-position:center; 
+}
+.die:hover {
+	background-size:28px 28px;
+}

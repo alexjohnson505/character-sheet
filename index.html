@@ -27,6 +27,7 @@
 <script src="functions.js"></script>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <script src="lib/mustache.js"></script>
 <title>Digital Character Sheet</title>
@@ -63,7 +64,8 @@
 <div id="character" class="panel panel-default">
     <div class="panel-heading">Character</div>
     <div class="panel-body">
-    	<img src="" alt="..." width=100 class="img-thumbnail">
+    	<!-- <img src="" alt="..." width=100 class="img-thumbnail"> -->
+		<div class="img-thumbnail"><i class="fa fa-picture-o"></i></div>
 
 		<form class="form-horizontal">
 		  <div class="form-group">
@@ -79,11 +81,11 @@
 		    <div class="col-sm-8">
 		      <p type="email" class="form-control">Half-elf</p>
 		    </div>
-			<label class="col-sm-4 control-label">HP</label>
+			<label class="col-sm-4 control-label"><i class="fa fa-heart"></i> HP</label>
 		    <div class="col-sm-8">
 		      <p type="email" class="form-control">27 Hit Points</p>
 		    </div>
-			<label class="col-sm-4 control-label">AC</label>
+			<label class="col-sm-4 control-label"><i class="fa fa-shield"></i>AC</label>
 		    <div class="col-sm-8">
 		      <p type="email" class="form-control">12 Armor Class</p>
 		    </div>
@@ -137,20 +139,20 @@
 		    <tr>
 				<td>[ ]</td>
 				<td>athletics</td>
-				<td>Roll</td>
+				<td class="die"></td>
 		    </tr>
 		    <tr>
 				<td>[ ]</td>
 				<td>perception</td>
-				<td>Roll</td>
+				<td class="die"></td>
 		    </tr>
 		    <tr>
 				<td>[ ]</td>
 				<td>concentration</td>
-				<td>Roll</td>
+				<td class="die"></td>
 		    </tr>
 		</table>
-		<button class="btn btn-primary btn-block" onclick="addModal('skills');">Add Skill</button>
+		<button class="btn btn-primary btn-block" onclick="addModal('skills');"><i class="fa fa-plus"></i>Add Skill</button>
     </div>
 </div>
 
@@ -161,20 +163,20 @@
 		    <tr>
 				<td>[ ]</td>
 				<td>fireball</td>
-				<td>Roll</td>
+				<td class="die"></td>
 		    </tr>
 		    <tr>
 				<td>[ ]</td>
 				<td>shortsword</td>
-				<td>Roll</td>
+				<td class="die"></td>
 		    </tr>
 		    <tr>
 				<td>[ ]</td>
 				<td>fists</td>
-				<td>Roll</td>
+				<td class="die"></td>
 		    </tr>
 		</table>
-		<button type="button" class="btn btn-primary btn-block"onclick="addModal('attacks');">Add Attack</button>
+		<button type="button" class="btn btn-primary btn-block"onclick="addModal('attacks');"><i class="fa fa-plus"></i>Add Attack</button>
     </div>
 </div>
 
@@ -187,6 +189,17 @@
         <h4 class="modal-title">Title</h4>
       </div>
       <div class="modal-body">
+      		<form class="form-horizontal" role="form">
+			  <div class="form-group">
+			    <label for="name" class="col-sm-2 control-label">Name</label>
+			    <div class="col-sm-10">
+			      <input type="Name" class="form-control" id="name" placeholder="Name">
+			    </div>
+			    <label for="description" class="col-sm-2 control-label">Description</label>
+			    <div class="col-sm-10">
+			      <input type="Descriptopm" class="form-control" id="description" placeholder="description">
+			    </div>			  
+			  </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
