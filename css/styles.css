@@ -43,3 +43,7 @@ h2 {
 .die:hover {
 	background-size:28px 28px;
 }
+.modal-prompt {
+	position: relative;
+	padding: 20px;
+}

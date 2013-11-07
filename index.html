@@ -140,17 +140,17 @@
 		    <tr>
 				<td><i class="fa fa-bolt"></td>
 				<td>athletics</td>
-				<td class="die" onclick="rollCheck('athletics')"></td>
+				<td class="die" onclick="skillCheck('athletics')"></td>
 		    </tr>
 		    <tr>
 				<td><i class="fa fa-eye"></td>
 				<td>perception</td>
-				<td class="die" onclick="rollCheck('perception')"></td>
+				<td class="die" onclick="skillCheck('perception')"></td>
 		    </tr>
 		    <tr>
 				<td><i class="fa fa-user"></td>
 				<td>concentration</td>
-				<td class="die" onclick="rollCheck('concentration')"></td>
+				<td class="die" onclick="skillCheck('concentration')"></td>
 		    </tr>
 		</table>
 		<button class="btn btn-primary btn-block" onclick="addModal('skills');"><i class="fa fa-plus"></i>Add Skill</button>
@@ -177,42 +177,21 @@
 				<td class="die" onclick="rollAttack('fists')"></td>
 		    </tr>
 		</table>
-		<button type="button" class="btn btn-primary btn-block"onclick="rollCheck('attacks');"><i class="fa fa-plus"></i>Add Attack</button>
+		<button type="button" class="btn btn-primary btn-block" onclick="rollCheck('attacks');"><i class="fa fa-plus"></i>Add Attack</button>
     </div>
 </div>
 
 
-<div id="roll-check-modal" class="modal">
+<div id="roll-modal" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Skill Check</h4>
       </div>
-      <div class="modal-body">
-      	ROLL CHECK
-      </div>
+      <div class="modal-body"></div>
+      <div class="modal-prompt"></div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Ok</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="roll-spell-modal" class="modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Spell Damage</h4>
-      </div>
-      <div class="modal-body">
-      	ROLL SPELL
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Ok</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
