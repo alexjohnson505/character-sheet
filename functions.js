@@ -1,4 +1,5 @@
 function renderCharacterData (){
+	// Render skills
 	var output;
 	for (var i = characterData.skills.length - 1; i >= 0; i--) {
 		output += Mustache.render(templates.skill, characterData.skills[i]);	
@@ -6,6 +7,7 @@ function renderCharacterData (){
 
 	$('#skills table').html(output);
 
+	// Render attacks
 	output = "";
 	for (var i = characterData.attacks.length - 1; i >= 0; i--) {
 		output += Mustache.render(templates.attack, characterData.attacks[i]);	
@@ -13,6 +15,7 @@ function renderCharacterData (){
 
 	$('#attacks table').html(output);
 
+	// Render spells
 	output = "";
 	for (var i = characterData.spells.length - 1; i >= 0; i--) {
 		output += Mustache.render(templates.spell, characterData.spells[i]);	
@@ -36,16 +39,19 @@ function roll (die){
 	} else if (die == "1d6"){
 		return Math.floor(Math.random()*72);
 	} else {
-		return 0;
+		return Math.floor(Math.random()*20);
 	}
 }
 
 // Renders given data and open modal based on id
 function openModal (title, html) {
+	// Set Modal content
 	$('#roll-modal .modal-title').html(title);
 	$('#roll-modal .modal-body').html(html);
 	$('#roll-modal .modal-prompt').html(" ");
 	$('#roll-modal .modal-footer').html(templates.footerClose);
+
+	// Open Modal Window
 	$('#roll-modal').modal('show');
 }
 
@@ -54,6 +60,7 @@ function skillCheck (target) {
 	var skillName = target;
 	var skill;
 
+	// Find the skill
 	for (var i = characterData.skills.length - 1; i >= 0; i--) {
 		if (characterData.skills[i].name == target) {
 			skill = characterData.skills[i];
@@ -74,6 +81,7 @@ function rollSpell (target){
 	var spellName = target;
 	var spell;
 
+	// Find the spell
 	for (var i = characterData.spells.length - 1; i >= 0; i--) {
 		if (characterData.spells[i].name == target) {
 			spell = characterData.spells[i];
@@ -94,6 +102,7 @@ function rollAttack (target){
 	var attackName = target;
 	var attack;
 
+	// Find the attack
 	for (var i = characterData.attacks.length - 1; i >= 0; i--) {
 		if (characterData.attacks[i].name == target) {
 			attack = characterData.attacks[i];
@@ -114,10 +123,9 @@ function rollAttack (target){
 }
 
 function attackConfirmation (status){
-	
 	if (status == "hit"){
 		var damage = attackData['d20roll'] + attackData['attributeMod'] + roll(attackData['damage']);
-		$('#roll-modal .modal-prompt').html("<br>Your attack Hits!!!!<strong>" + damage + " DAMAGE</strong>");
+		$('#roll-modal .modal-prompt').html("<br>Your attack Hits!!!!<strong>  " + damage + " DAMAGE</strong>");
 
 	} else if (status == "miss") {
 		$('#roll-modal .modal-prompt').html("Bummer. Your attack missed.   ");

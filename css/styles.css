@@ -13,6 +13,9 @@ body {
 h2 {
 	font-size: 2em;
 }
+#character {
+	margin-left: 50px;
+}
 #character img {
 	display: block;
 	margin: 10px auto;
@@ -32,6 +35,9 @@ h2 {
 	color: #ddd;
 	margin: 0 auto;
 }
+#abilities table td:nth-child(2):hover{
+	background-color: #eee;
+}
 .die {
 	width:30px;
 	height:20px;
@@ -43,7 +49,33 @@ h2 {
 .die:hover {
 	background-size:28px 28px;
 }
-.modal-prompt {
+.modal-header {
+	margin: 0 auto;
+	line-height: 1.5;
+	font-size: 20px;
+}
+.modal-body {
 	position: relative;
 	padding: 20px;
+	line-height: 30px;
+	font-size: 14px;
+	padding: 17px 30px;
+}
+.modal-prompt {
+	position: relative;
+	padding: 5px 30px;
+	font-size: 20px;
+	font-style: italic;
+}
+.modal-prompt .btn {
+	width: 150px;
+	margin: 15px;
+	padding: 10px 5px;
+	font-size: 20px;
+}
+.sum {
+	display: block;
+	border-top: 1px solid gray;
+	width: 50%;
+	font-size: 17px
 }
