@@ -27,6 +27,7 @@ function getAttributeMod (attribute){
 }
 
 // Temporary fake-die-roll calculation
+// TODO: Actually write this function
 function roll (die){
 	if (die == "1d20"){
 		return Math.floor(Math.random()*20);
