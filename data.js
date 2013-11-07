@@ -15,34 +15,60 @@ var characterData = {
         }
     ],
     "ac": 21,
-    "str": 12,
-    "dex": 10,
-    "con": 8,
-    "wis": 12,
-    "cha": 16,
-    "int": 6,
+    "STR": 14,
+    "DEX": 10,
+    "CON": 8,
+    "WIS": 12,
+    "CHA": 16,
+    "INT": 6,
     "skills" : [
         {
-            "name": "xxx",
-            "description": "Arrow to face",
-            "data": 15,
+            "name": "athletics",
+            "description": "Character's physical mobility.",
+            "attribute" : "DEX"
         },
         {
-            "name": "xxx",
-            "description": "Arrow to face again",
-            "data": 15,
+            "name": "perception",
+            "description": "Character's surrounding awareness.",
+            "attribute" : "INT"
+        },
+        {
+            "name": "concentration",
+            "description": "Character's mental concentration when interrupted.",
+            "attribute" : "CON"
         },
     ],
     "attacks" : [
         {
             "name": "Shortsword",
+            "attribute" : "DEX",
             "description": "Wide swipe",
-            "data": 15,
+            "damage": "1d6",
+            "damage-type": "piercing",
+            "proficient" : true
         },
         {
             "name": "Fireball",
             "description": "Fire attack",
             "data": 15,
+        },
+    ],
+    "spells" : [
+        {
+            "name": "Shortsword",
+            "attribute" : "WIS",
+            "description": "Wide swipe",
+            "damage": "1d6",
+            "damage-type": "fire",
+            "proficient" : true
+        },
+        {
+            "name": "Fireball",
+            "attribute" : "WIS",
+            "description": "Wide swipe",
+            "damage": "1d6",
+            "damage-type": "fire",
+            "proficient" : true
         },
     ],
 }
