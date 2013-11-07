@@ -5,6 +5,7 @@ var templates = {
 	"hit-or-miss" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
 	"footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
 	"abilityScore": "<tr><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>",
-	"skill" :  '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="skillCheck(\'{{name}}\');"></td></tr>',
-	"attack" : '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="rollAttack(\'{{name}}\');"></td></tr>'
+	"skill"  :  '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="skillCheck(\'{{name}}\');"></td></tr>',
+	"attack" :  '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="rollAttack(\'{{name}}\');"></td></tr>',
+	"spell"  :  '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="rollSpell(\'{{name}}\');"></td></tr>'
 }

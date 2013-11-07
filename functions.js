@@ -6,12 +6,19 @@ function renderCharacterData (){
 
 	$('#skills table').html(output);
 
-	var attackHTML;
+	output = "";
 	for (var i = characterData.attacks.length - 1; i >= 0; i--) {
-		attackHTML += Mustache.render(templates.attack, characterData.attacks[i]);	
+		output += Mustache.render(templates.attack, characterData.attacks[i]);	
 	};
 
-	$('#attacks table').html(attackHTML);
+	$('#attacks table').html(output);
+
+	output = "";
+	for (var i = characterData.spells.length - 1; i >= 0; i--) {
+		output += Mustache.render(templates.spell, characterData.spells[i]);	
+	};
+
+	$('#attacks table').append(output);
 }
 
 // Return attribute modifier for given attribute
