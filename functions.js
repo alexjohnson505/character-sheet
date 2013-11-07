@@ -1,3 +1,4 @@
+// Return attribute modifier for given attribute
 function getAttributeMod (attribute){
 	return Math.floor((characterData[attribute] - 10)/2);
 }
@@ -9,12 +10,7 @@ function roll (die){
 	}
 }
 
-function addModal(target) {
-	$('#add-modal .modal-title').html("TITLEYEA");
-	// $('#add-modal .modal-body').html("yeah");
-	$('#add-modal').modal('show');
-}
-
+// Performs roll for a skill check
 function rollCheck(target) {
 	var skillName = target;
 	var skill;
@@ -31,7 +27,7 @@ function rollCheck(target) {
 	$('#roll-check-modal').modal('show');
 }
 
-
+// Render skill check modal and data
 function rollCheckTemplate (skill){
 	var attribute = skill.attribute;
 	var attributeMod = getAttributeMod(attribute);
