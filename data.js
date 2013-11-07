@@ -26,19 +26,19 @@ var characterData = {
             "name": "athletics",
             "description": "Character's physical mobility.",
             "attribute" : "DEX",
-            "icon": "fa-exclamation"
+            "icon": "fa-bolt"
         },
         {
             "name": "perception",
             "description": "Character's surrounding awareness.",
             "attribute" : "INT",
-            "icon": "fa-exclamation"
+            "icon": "fa-eye"
         },
         {
             "name": "concentration",
             "description": "Character's mental concentration when interrupted.",
             "attribute" : "CON",
-            "icon": "fa-exclamation"
+            "icon": "fa-user"
         },
     ],
     "attacks" : [
@@ -67,7 +67,7 @@ var characterData = {
             "damage": "1d6",
             "damage-type": "bludgeoning",
             "proficient" : true,
-            "icon": "fa-exclamation"
+            "icon": "fa-thumbs-up"
         }
     ],
     "spells" : [
@@ -78,7 +78,7 @@ var characterData = {
             "damage": "12d6",
             "damage-type": "fire",
             "proficient" : true,
-            "icon": "fa-exclamation"
+            "icon": "fa-bolt"
         },
     ],
 }

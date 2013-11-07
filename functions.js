@@ -1,3 +1,18 @@
+function renderCharacterData (){
+	var output;
+	for (var i = characterData.skills.length - 1; i >= 0; i--) {
+		output += Mustache.render(templates.skill, characterData.skills[i]);	
+	};
+
+	$('#skills table').html(output);
+
+	var attackHTML;
+	for (var i = characterData.attacks.length - 1; i >= 0; i--) {
+		attackHTML += Mustache.render(templates.attack, characterData.attacks[i]);	
+	};
+
+	$('#attacks table').html(attackHTML);
+}
 
 // Return attribute modifier for given attribute
 function getAttributeMod (attribute){
@@ -21,12 +36,8 @@ function roll (die){
 function openModal (title, html) {
 	$('#roll-modal .modal-title').html(title);
 	$('#roll-modal .modal-body').html(html);
-	$('#roll-modal .modal-prompt').html();
+	$('#roll-modal .modal-prompt').html(" ");
 	$('#roll-modal .modal-footer').html(templates.footerClose);
-
-	  
-
-
 	$('#roll-modal').modal('show');
 }
 

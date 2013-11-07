@@ -31,6 +31,12 @@
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <script src="lib/mustache.js"></script>
+<script>
+$( document ).ready(function() {
+    console.log( "Document Ready!" );
+    renderCharacterData();
+});
+</script>
 <title>Digital Character Sheet</title>
 </head>
 <body>
@@ -95,7 +101,7 @@
     </div>
 </div>
 
-<div id="abilities" class="panel panel-default">
+<div id="Abilities" class="panel panel-default">
     <div class="panel-heading">Abilities</div>
     <div class="panel-body">
         <table class="table table-hover">
@@ -136,23 +142,7 @@
 <div id="skills" class="panel panel-default">
     <div class="panel-heading">Skills</div>
     <div class="panel-body">
-		<table class="table table-hover">
-		    <tr>
-				<td><i class="fa fa-bolt"></td>
-				<td>athletics</td>
-				<td class="die" onclick="skillCheck('athletics')"></td>
-		    </tr>
-		    <tr>
-				<td><i class="fa fa-eye"></td>
-				<td>perception</td>
-				<td class="die" onclick="skillCheck('perception')"></td>
-		    </tr>
-		    <tr>
-				<td><i class="fa fa-user"></td>
-				<td>concentration</td>
-				<td class="die" onclick="skillCheck('concentration')"></td>
-		    </tr>
-		</table>
+		<table class="table table-hover"></table>
 		<button class="btn btn-primary btn-block" onclick="addModal('skills');"><i class="fa fa-plus"></i>Add Skill</button>
     </div>
 </div>
@@ -161,7 +151,7 @@
     <div class="panel-heading">Attacks</div>
     <div class="panel-body">
         <table class="table table-hover">
-		    <tr>
+<!-- 		    <tr>
 				<td><i class="fa fa-bolt"></td>
 				<td>Fireball</td>
 				<td class="die" onclick="rollSpell('fireball')"></td>
@@ -175,7 +165,7 @@
 				<td><i class="fa fa-thumbs-up"></td>
 				<td>fists</td>
 				<td class="die" onclick="rollAttack('fists')"></td>
-		    </tr>
+		    </tr> -->
 		</table>
 		<button type="button" class="btn btn-primary btn-block" onclick="rollCheck('attacks');"><i class="fa fa-plus"></i>Add Attack</button>
     </div>
