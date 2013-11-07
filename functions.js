@@ -23,23 +23,14 @@ function rollCheck (target) {
 		}
 	};
 
-	var output = Mustache.render(rollCheckTemplate(skill), skill);
+	var skillData = skill;
+	skillData['attributeMod'] = getAttributeMod(skill.attribute);
+	skillData['d20roll'] = roll("1d20");
+	skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
 
-	$('#roll-check-modal .modal-body').html(output);
-	$('#roll-check-modal').modal('show');
-}
+	var output = Mustache.render(templates.rollCheck, skillData);
 
-// Render skill check modal and data
-function rollCheckTemplate (skill){
-	var attribute = skill.attribute;
-	var attributeMod = getAttributeMod(attribute);
-	var d20roll = roll("1d20");
-	var sum = attributeMod + d20roll;
-
-	return  "Skill: {{name}}<br>" + 
-		d20roll + " : 1d20 Base Roll<br>" + 
-		attributeMod + " : {{attribute}} Modifier<br><strong>" + 
-		sum + " : SUM</strong>";
+	openModal("#roll-check-modal", output);
 }
 
 function rollAttack (target){
@@ -65,26 +56,16 @@ function rollSpell (target){
 		}
 	};
 
-	var output = Mustache.render(rollSpellTemplate(spell), spell);
-	$('#roll-spell-modal .modal-body').html(output);
-	$('#roll-spell-modal').modal('show');
+	var spellData = spell;
+	spellData['damage'] = roll(spell.damage);
+	spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
 
-}
-// Render spell damage
-function rollSpellTemplate (spell){
-
-	var damage = roll(spell.damage);
-	var spellDC = 10 + getAttributeMod(spell.attribute);
-
-	return  "Name : {{name}}<br>" + 
-		"Description : {{description}}<br>" + 
-		"Damage Type : {{damage-type}}<br><strong>" + 
-		damage + " : DAMAGE</strong><br>" + 
-		"Spell DC: " + spellDC;
-
-// Damage Rolled: 
-
+	var output = Mustache.render(templates.spellCast, spellData);
+	
+	openModal("#roll-spell-modal", output);
 }
 
-
-
+function openModal (id, html) {
+	$(id + ' .modal-body').html(html);
+	$(id).modal('show');
+}
