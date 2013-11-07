@@ -25,50 +25,60 @@ var characterData = {
         {
             "name": "athletics",
             "description": "Character's physical mobility.",
-            "attribute" : "DEX"
+            "attribute" : "DEX",
+            "icon": "fa-exclamation"
         },
         {
             "name": "perception",
             "description": "Character's surrounding awareness.",
-            "attribute" : "INT"
+            "attribute" : "INT",
+            "icon": "fa-exclamation"
         },
         {
             "name": "concentration",
             "description": "Character's mental concentration when interrupted.",
-            "attribute" : "CON"
+            "attribute" : "CON",
+            "icon": "fa-exclamation"
         },
     ],
     "attacks" : [
         {
-            "name": "Shortsword",
-            "attribute" : "DEX",
+            "name": "shortsword",
+            "attribute" : "STR",
             "description": "Wide swipe",
             "damage": "1d6",
-            "damage-type": "piercing",
-            "proficient" : true
+            "damage-type": "slashing",
+            "proficient" : true,
+            "icon": "fa-exclamation"
         },
         {
-            "name": "Fireball",
-            "description": "Fire attack",
-            "data": 15,
+            "name": "longbow",
+            "attribute" : "DEX",
+            "description": "Long wooden bow, capable of shooting up to 50 meters",
+            "damage": "1d8",
+            "damage-type": "piercing",
+            "proficient" : true,
+            "icon": "fa-exclamation"
         },
+        {
+            "name": "fists",
+            "attribute" : "DEX",
+            "description": "Linen-wrapped fists, ready for pummeling",
+            "damage": "1d6",
+            "damage-type": "bludgeoning",
+            "proficient" : true,
+            "icon": "fa-exclamation"
+        }
     ],
     "spells" : [
         {
-            "name": "Shortsword",
+            "name": "fireball",
             "attribute" : "WIS",
             "description": "Wide swipe",
-            "damage": "1d6",
+            "damage": "12d6",
             "damage-type": "fire",
-            "proficient" : true
-        },
-        {
-            "name": "Fireball",
-            "attribute" : "WIS",
-            "description": "Wide swipe",
-            "damage": "1d6",
-            "damage-type": "fire",
-            "proficient" : true
+            "proficient" : true,
+            "icon": "fa-exclamation"
         },
     ],
 }
