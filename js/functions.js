@@ -1,34 +1,13 @@
 // Populate DOM with character specific data
 function renderCharacterData (){
-	// Render skills
-	var output;
-	for (var i = characterData.skills.length - 1; i >= 0; i--) {
-		output += Mustache.render(templates.skill, characterData.skills[i]);
-	};
-
-	$('#skills table').html(output);
-
-	// Render attacks
-	output = "";
-	for (var i = characterData.attacks.length - 1; i >= 0; i--) {
-		output += Mustache.render(templates.attack, characterData.attacks[i]);
-	};
-
-	$('#attacks table').html(output);
-
-	// Render spells
-	output = "";
-	for (var i = characterData.spells.length - 1; i >= 0; i--) {
-		output += Mustache.render(templates.spell, characterData.spells[i]);
-	};
-
-	$('#attacks table').append(output);
 	$('#character .panel-body').html(renderCharacterStats())
 	$('#abilities table').html(renderCharacterAbilities());
+	$('#skills table').html(tabelizeData(characterData.skills, "skill"));
+	$('#attacks table').html(tabelizeData(characterData.attacks, "attack"));
+	$('#attacks table').append(tabelizeData(characterData.spells, "spell"));
 }
 // Returns character data formatted as HTML form.
 function renderCharacterStats (){
-
 	var characterStats = characterData;
 	characterStats['currentHP'] = characterData.hp[0].amount + " Hit Points";
 	characterStats['currentAC'] = characterData.ac[0].amount + " Armor Class";
@@ -51,6 +30,14 @@ function renderCharacterAbilities(){
 		output += Mustache.render(templates.abilityScore, STATS[i]);
 	};
 
+	return output;
+}
+// Given an associative array, and template name, renders HTML tables rows
+function tabelizeData (category, template){
+	output = "";
+	for (var i = category.length - 1; i >= 0; i--) {
+		output += Mustache.render(templates[template], category[i]);
+	};
 	return output;
 }
 
