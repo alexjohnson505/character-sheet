@@ -1,12 +1,18 @@
 // Populate DOM with character specific data
 function renderCharacterData (){
+	// Stats
 	$('#character .panel-body').html(renderCharacterStats())
+	// Abilities
 	$('#abilities table').html(renderCharacterAbilities());
+	// Skills
 	$('#skills table').html(tabelizeData(characterData.skills, "skill"));
+	// Attacks
 	$('#attacks table').html(tabelizeData(characterData.attacks, "attack"));
+	// Spells (added to attacks table)
 	$('#attacks table').append(tabelizeData(characterData.spells, "spell"));
 }
-// Returns character data formatted as HTML form.
+
+// Returns character data formatted as an HTML form.
 function renderCharacterStats (){
 	var characterStats = characterData;
 	characterStats['currentHP'] = characterData.hp[0].amount + " Hit Points";
@@ -14,12 +20,15 @@ function renderCharacterStats (){
 
 	return Mustache.render(templates.characterStats, characterStats);
 }
+
 // Return character abilities rendered as HTML table rows
 function renderCharacterAbilities(){
+	// Associate arrays are annoying to loop through, so we
+	// just make a list here of data we want to go through
 	var STATS = ["STR", "DEX", "CON", "WIS", "CHA", "INT"];
 	var output = "";
 
-	// Collect abilities data, render into template table rows
+	// Collect abilities data, combine rendered templates into single output
 	for (var i = 0; i <= STATS.length - 1; i++) {
 		STATS[i] = {
 			"attributeName" : STATS[i],
@@ -32,7 +41,8 @@ function renderCharacterAbilities(){
 
 	return output;
 }
-// Given an associative array, and template name, renders HTML tables rows
+
+// Given an associative array and template name, renders HTML tables rows
 function tabelizeData (category, template){
 	var output = "";
 	for (var i = category.length - 1; i >= 0; i--) {
@@ -126,9 +136,8 @@ function rollAttack (target){
 		}
 	};
 
-	// global : attack data
-	// saves last used attacks information
-	var attackData = attack;
+	// attackData: global variables to save the last used attack
+	attackData = attack;
 	attackData['attributeMod'] = getAttributeMod(attack.attribute);
 	attackData['d20roll'] = roll("1d20");
 	attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
@@ -136,9 +145,9 @@ function rollAttack (target){
 	var output = Mustache.render(templates.weaponAttack, attackData);
 	openModal("Make an Attack", output);
 	$('#roll-modal .modal-prompt').html(templates['hit-or-miss']);
-
 }
 
+// Render feedback after an attack hits/misses
 function attackConfirmation (status){
 	if (status == "hit"){
 		var damage = attackData['d20roll'] + attackData['attributeMod'] + roll(attackData['damage']);
