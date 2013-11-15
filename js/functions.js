@@ -34,7 +34,7 @@ function renderCharacterAbilities(){
 }
 // Given an associative array, and template name, renders HTML tables rows
 function tabelizeData (category, template){
-	output = "";
+	var output = "";
 	for (var i = category.length - 1; i >= 0; i--) {
 		output += Mustache.render(templates[template], category[i]);
 	};
@@ -128,7 +128,7 @@ function rollAttack (target){
 
 	// global : attack data
 	// saves last used attacks information
-	attackData = attack;
+	var attackData = attack;
 	attackData['attributeMod'] = getAttributeMod(attack.attribute);
 	attackData['d20roll'] = roll("1d20");
 	attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
