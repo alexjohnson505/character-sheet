@@ -2,7 +2,7 @@ function renderCharacterData (){
 	// Render skills
 	var output;
 	for (var i = characterData.skills.length - 1; i >= 0; i--) {
-		output += Mustache.render(templates.skill, characterData.skills[i]);	
+		output += Mustache.render(templates.skill, characterData.skills[i]);
 	};
 
 	$('#skills table').html(output);
@@ -10,7 +10,7 @@ function renderCharacterData (){
 	// Render attacks
 	output = "";
 	for (var i = characterData.attacks.length - 1; i >= 0; i--) {
-		output += Mustache.render(templates.attack, characterData.attacks[i]);	
+		output += Mustache.render(templates.attack, characterData.attacks[i]);
 	};
 
 	$('#attacks table').html(output);
@@ -18,10 +18,21 @@ function renderCharacterData (){
 	// Render spells
 	output = "";
 	for (var i = characterData.spells.length - 1; i >= 0; i--) {
-		output += Mustache.render(templates.spell, characterData.spells[i]);	
+		output += Mustache.render(templates.spell, characterData.spells[i]);
 	};
 
 	$('#attacks table').append(output);
+
+	$('#character .panel-body').html(renderCharacterStats())
+}
+// Returns character data formatted as HTML form.
+function renderCharacterStats (){
+
+	var characterStats = characterData;
+	characterStats['currentHP'] = characterData.hp[0].amount + " Hit Points";
+	characterStats['currentAC'] = characterData.ac[0].amount + " Armor Class";
+
+	return Mustache.render(templates.characterStats, characterStats);
 }
 
 // Return attribute modifier for given attribute

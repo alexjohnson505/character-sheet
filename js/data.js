@@ -1,5 +1,5 @@
 var characterData = {
-    "name": "Jpe SHMOE",
+    "name": "Joe SHMOE",
     "class": "Fighter",
     "race": "Half-Orc",
     "hp": [
@@ -14,7 +14,18 @@ var characterData = {
             "description": "It was a fire Arrow"
         }
     ],
-    "ac": 21,
+    "ac": [
+        {
+            "time": "9:54 PM 11/5/2013",
+            "amount": 13,
+            "description": "Got full plate"
+        },
+        {
+            "time": "9:55 PM 11/5/2013",
+            "amount": 9,
+            "description": "Base AC"
+        }
+    ],
     "STR": 14,
     "DEX": 10,
     "CON": 8,
