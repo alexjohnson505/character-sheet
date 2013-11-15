@@ -23,7 +23,6 @@ function renderCharacterData (){
 	};
 
 	$('#attacks table').append(output);
-
 	$('#character .panel-body').html(renderCharacterStats())
 	$('#abilities table').html(renderCharacterAbilities());
 }
@@ -38,15 +37,14 @@ function renderCharacterStats (){
 }
 // Return character abilities rendered as HTML table rows
 function renderCharacterAbilities(){
-	var abilities = characterData.abilities;
 	var STATS = ["STR", "DEX", "CON", "WIS", "CHA", "INT"];
 	var output = "";
 
+	// Collect abilities data, render into template table rows
 	for (var i = 0; i <= STATS.length - 1; i++) {
-		console.log(abilities[STATS[i]]);
 		STATS[i] = {
 			"attributeName" : STATS[i],
-			"attribute" : abilities[STATS[i]],
+			"attribute" : characterData.abilities[STATS[i]],
 			"attributeMod" : getAttributeMod([STATS[i]])
 		}
 
