@@ -1,5 +1,5 @@
 var characterData = {
-    "name": "Joe SHMOE",
+    "name": "Joe Shmoe",
     "class": "Fighter",
     "race": "Half-Orc",
     "hp": [
@@ -26,12 +26,14 @@ var characterData = {
             "description": "Base AC"
         }
     ],
-    "STR": 14,
-    "DEX": 10,
-    "CON": 8,
-    "WIS": 12,
-    "CHA": 16,
-    "INT": 6,
+    "abilities" : {
+        "STR": 14,
+        "DEX": 10,
+        "CON": 8,
+        "WIS": 12,
+        "CHA": 16,
+        "INT": 6
+    },
     "skills" : [
         {
             "name": "athletics",

@@ -1,3 +1,4 @@
+// Populate DOM with character specific data
 function renderCharacterData (){
 	// Render skills
 	var output;
@@ -24,6 +25,7 @@ function renderCharacterData (){
 	$('#attacks table').append(output);
 
 	$('#character .panel-body').html(renderCharacterStats())
+	$('#abilities table').html(renderCharacterAbilities());
 }
 // Returns character data formatted as HTML form.
 function renderCharacterStats (){
@@ -34,10 +36,29 @@ function renderCharacterStats (){
 
 	return Mustache.render(templates.characterStats, characterStats);
 }
+// Return character abilities rendered as HTML table rows
+function renderCharacterAbilities(){
+	var abilities = characterData.abilities;
+	var STATS = ["STR", "DEX", "CON", "WIS", "CHA", "INT"];
+	var output = "";
+
+	for (var i = 0; i <= STATS.length - 1; i++) {
+		console.log(abilities[STATS[i]]);
+		STATS[i] = {
+			"attributeName" : STATS[i],
+			"attribute" : abilities[STATS[i]],
+			"attributeMod" : getAttributeMod([STATS[i]])
+		}
+
+		output += Mustache.render(templates.abilityScore, STATS[i]);
+	};
+
+	return output;
+}
 
 // Return attribute modifier for given attribute
 function getAttributeMod (attribute){
-	return Math.floor((characterData[attribute] - 10)/2);
+	return Math.floor((characterData.abilities[attribute] - 10)/2);
 }
 
 // Temporary fake-die-roll calculation

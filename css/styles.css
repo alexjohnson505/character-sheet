@@ -18,9 +18,6 @@ h2 {
 }
 
 /* Character Panel */
-#character {
-	margin-left: 50px;
-}
 #character img {
 	display: block;
 	margin: 10px auto;
