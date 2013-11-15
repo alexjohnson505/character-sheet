@@ -1,6 +1,12 @@
+/* Overide Bootstrap Document styles */
 body {
 	background-color: #efefef;
 }
+h2 {
+	font-size: 2em;
+}
+
+/* Panels */
 .panel {
 	float: left;
 	width: 250px;
@@ -10,9 +16,8 @@ body {
 	border-radius: 4px 4px 0 0;
 	box-shadow: none;
 }
-h2 {
-	font-size: 2em;
-}
+
+/* Character Panel */
 #character {
 	margin-left: 50px;
 }
@@ -28,7 +33,7 @@ h2 {
 	padding-right:5px;
 }
 .img-thumbnail {
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
 }
 .img-thumbnail i {
 	font-size: 100px;
@@ -36,19 +41,11 @@ h2 {
 	margin: 0 auto;
 }
 #abilities table td:nth-child(2):hover{
+	/* Hover for Ability scores */
 	background-color: #eee;
 }
-.die {
-	width:30px;
-	height:20px;
-	background-image:url('../images/A_Die_clip_art.svg');
-	background-size:23px 23px;
-	background-repeat:no-repeat;
-	background-position:center; 
-}
-.die:hover {
-	background-size:28px 28px;
-}
+
+/* Modals */
 .modal-header {
 	margin: 0 auto;
 	line-height: 1.5;
@@ -78,4 +75,17 @@ h2 {
 	border-top: 1px solid gray;
 	width: 50%;
 	font-size: 17px
+}
+
+/* Buttons */
+.die {
+	width:30px;
+	height:20px;
+	background-image:url('../images/A_Die_clip_art.svg');
+	background-size:23px 23px;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.die:hover {
+	background-size:28px 28px;
 }
