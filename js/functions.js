@@ -59,16 +59,24 @@ function getAttributeMod (attribute){
 // Temporary fake-die-roll calculation
 // TODO: Actually write this function
 function roll (die){
-	if (die == "1d20"){
-		return Math.floor(Math.random()*20);
-	} else if (die == "12d6"){
-		return Math.floor(Math.random()*72);
-	} else if (die == "1d6"){
-		return Math.floor(Math.random()*72);
-	} else {
-		return Math.floor(Math.random()*20);
-	}
+    var splitted = die.split('d');
+    return rollNdX(splitted[0], splitted[1]);
 }
+
+// generates random integer between min (inc) and max (inc)
+function rollRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// rolls ndx dice
+function rollNdX (n, x) {
+    var accum = 0;
+    for (var i = 0; i < n; i++) {
+        accum += rollRange(1, x);
+    }
+    return accum
+}   
+
 
 // Renders given data and open modal based on id
 function openModal (title, html) {
