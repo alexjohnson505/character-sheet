@@ -3,7 +3,7 @@
  * SKILLS
  */
 
-// Performs roll for a skill check
+// view the details of a skill
 function viewSkill (target) {
     var skill;
 
@@ -26,7 +26,7 @@ function viewSkill (target) {
          'desc' : '<strong>'+skill.attribute+'</strong> mod',
          'spec' : '+'}
     ]
-    
+
     skillData['sum'] = sumArray(skillData['rollcomps'], 'number');
 
     // skillData['sum'] = skillData['attributeMod'] + skillData['baseRoll'];
@@ -34,16 +34,19 @@ function viewSkill (target) {
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Skill"}));
 }
 
+// edit the details of a skill
 function editSkill() {
     alert("functionality coming soon");
 }
 
-// Render feedback skill roll
+// roll a skill check
 function rollSkill (){
     msgForDM = {'message' : "Report this result to your DM."};
     skillData['roll'] = skillData['baseRoll'] + skillData['attributeMod'];
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollMods, skillData) 
-                                        + Mustache.render(templates.dmPrompt, msgForDM));
+    dieAnimation(Mustache.render(templates.rollMods, skillData) + Mustache.render(templates.dmPrompt, msgForDM));
+
+
+    // $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
 }
 
 
@@ -51,7 +54,7 @@ function rollSkill (){
  * SPELLS
  */
 
-// Roll the damage for a spell
+// view the details of a spell
 function viewSpell (target){
     var spell;
 
@@ -71,11 +74,12 @@ function viewSpell (target){
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Spell"}));
 }
 
+// edit the detauls of a spell
 function editSpell() {
     alert("functionality coming soon");
 }
 
-// Render feedback skill roll
+// roll the damage of a spell
 function rollSpell (){
     spellData['title'] = "Spell damage roll";
     spellData['rollcomps'] = [{'number' : roll(spellData.damage),
@@ -83,15 +87,14 @@ function rollSpell (){
                                'spec' : '+'}]
     spellData['sum'] = sumArray(spellData['rollcomps'], 'number');
     msgForDM = {'message' : "Report this damage and the Spell DC to the DM."};
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollMods, spellData)
-                                        + Mustache.render(templates.dmPrompt, msgForDM));
+    dieAnimation(Mustache.render(templates.rollMods, spellData) + Mustache.render(templates.dmPrompt, msgForDM));
 }
 
 /**
  * ATTACKS
  */
 
-// Roll the to-hit and damage for an attack
+// view the details of an attack
 function viewAttack (target){
     var attack;
 
@@ -110,51 +113,61 @@ function viewAttack (target){
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Attack"}));
 }
 
+
+// edit the details of an attack
 function editAttack() {
     alert("functionality coming soon");
 }
 
+// roll the to-hit of an attack, prompt for Hit or Miss
 function rollAttack() {
     attackData['title'] = "To-hit roll";
 
     attackData['rollcomps'] = [
         {'number' : roll("1d20"), 'desc' : '<strong>base</strong> (1d20)',
          'spec' : ''},
-        {'number' : attackData['attributeMod'], 
+        {'number' : attackData['attributeMod'],
          'desc' : '<strong>'+attackData.attribute+'</strong> mod',
          'spec' : '+'}
     ];
-    
+
     attackData['sum'] = sumArray(attackData['rollcomps'], 'number');
     var msgForDM = {'message' : "Report the to-hit roll to the DM and ask if you hit or miss."};
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollMods, attackData)
+    dieAnimation(Mustache.render(templates.rollMods, attackData)
                                         + Mustache.render(templates.dmPrompt, msgForDM)
                                         + Mustache.render(templates.confToHit, {}));
 }
 
-// Render feedback after an attack hits/misses
+// roll the damage of an attack
 function attackConfirmation (status){
     if (status == "hit"){
         attackData['title'] = "Damage roll";
 
         attackData['rollcomps'] = [
-            {'number' : roll(attackData['damage']), 
+            {'number' : roll(attackData['damage']),
              'desc' : '<strong>base</strong> ('+attackData['damage']+')',
              'spec' : ''},
-            {'number' : attackData['attributeMod'], 
+            {'number' : attackData['attributeMod'],
              'desc' : '<strong>'+attackData.attribute+'</strong> mod',
              'spec' : '+'}
         ];
 
         attackData['sum'] = sumArray(attackData['rollcomps'], 'number');
         var msgForDM = {'message' : "Report this damage and its type to your DM."};
-        
+
         var output = Mustache.render(templates.rollMods, attackData);
         output += Mustache.render(templates.dmPrompt, msgForDM);
     } else if (status == "miss") {
+        var rollTime = 0;
         var output = "Bummer. Your attack missed.";
     }
 
     $('#roll-modal .modal-prompt .dm-prompt, .hit-or-miss').remove();
-    $('#roll-modal .modal-prompt').append(output);
+
+    $('#roll-modal .modal-prompt').append(templates["die-animation"]);
+
+    setTimeout( function(){
+        $(".die-animation").remove();
+        $('#roll-modal .modal-prompt').append(output);
+    }, rollTime);
 }

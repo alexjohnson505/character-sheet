@@ -10,20 +10,22 @@ function renderCharacterData (){
     $('#attacks table').html(tabelizeData(characterData.attacks, "attack"));
     // Spells (added to attacks table)
     $('#attacks table').append(tabelizeData(characterData.spells, "spell"));
+    // Character change history
+    $('#history table').append(tabelizeData(changeHistory, "history"));
 }
 
 // Returns character data formatted as an HTML form.
 function renderCharacterStats (){
     var characterStats = characterData;
-    characterStats['currentHP'] = characterData.hp[0].amount + " Hit Points";
-    characterStats['currentAC'] = characterData.ac[0].amount + " Armor Class";
+    characterStats['currentHP'] = characterData.hp + " Hit Points";
+    characterStats['currentAC'] = characterData.ac + " Armor Class";
 
     return Mustache.render(templates.characterStats, characterStats);
 }
 
-// 
+//
 function sumArray(arr, key) {
-    var total = 0; 
+    var total = 0;
     $.each(arr, function() {
         total += this[key];
     });
@@ -83,7 +85,7 @@ function rollNdX (n, x) {
         accum += rollRange(1, x);
     }
     return accum
-}   
+}
 
 
 // Renders given data and open modal based on id
@@ -96,4 +98,13 @@ function openModal (title, html) {
 
     // Open Modal Window
     $('#roll-modal').modal('show');
+}
+
+// Show die animation for <1s, then replace with data
+function dieAnimation(result){
+    $('#roll-modal .modal-prompt').html(templates["die-animation"]);
+
+    setTimeout( function(){
+        $('#roll-modal .modal-prompt').html(result);
+    }, 900);
 }

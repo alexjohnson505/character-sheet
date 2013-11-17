@@ -2,30 +2,8 @@ var characterData = {
     "name": "Joe Shmoe",
     "class": "Fighter",
     "race": "Half-Orc",
-    "hp": [
-        {
-            "time": "9:54 PM 11/5/2013",
-            "amount": 15,
-            "description": "Arrow to face"
-        },
-        {
-            "time": "9:55 PM 11/5/2013",
-            "amount": 10,
-            "description": "It was a fire Arrow"
-        }
-    ],
-    "ac": [
-        {
-            "time": "9:54 PM 11/5/2013",
-            "amount": 13,
-            "description": "Got full plate"
-        },
-        {
-            "time": "9:55 PM 11/5/2013",
-            "amount": 9,
-            "description": "Base AC"
-        }
-    ],
+    "hp": 15,
+    "ac": 13,
     "abilities" : {
         "STR": 14,
         "DEX": 10,
@@ -95,3 +73,20 @@ var characterData = {
         },
     ],
 }
+
+var changeHistory = [{
+    "target" : "abilities.STR",
+    "change" : 1,
+    "description" : "Obtained helmet of strength",
+    "time" : "time",
+},{
+    "target" : "hp",
+    "change" : -4,
+    "description" : "Arrow damage",
+    "time" : "time",
+},{
+    "target" : "hp",
+    "change" : +12,
+    "description" : "Heal Spell",
+    "time" : "time",
+}]

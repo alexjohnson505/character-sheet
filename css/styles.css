@@ -1,98 +1,121 @@
 /* Overide Bootstrap Document styles */
 body {
-	background-color: #efefef;
+    background-color: #efefef;
 }
 h2 {
-	font-size: 2em;
+    font-size: 2em;
 }
-
+.btn-default {
+    color: #333;
+    background-color: #ebebeb;
+    border-color: #adadad;
+}
+.btn-default:hover {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
 /* Panels */
 .panel {
-	float: left;
-	width: 250px;
-	margin: 15px 2px;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 4px 4px 0 0;
-	box-shadow: none;
+    float: left;
+    width: 250px;
+    margin: 15px 2px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
 }
-
+.panel-heading {
+    height: 47px;
+    padding: 0;
+}
+.panel-heading h2 {
+    font-size: 1.2em;
+    margin:0;
+    display: block;
+    float: left;
+    padding: 16px;
+}
+.panel-heading .btn {
+    float:right;
+    margin: 7px;
+}
 /* Character Panel */
 #character img {
-	display: block;
-	margin: 10px auto;
+    display: block;
+    margin: 10px auto;
 
 }
 .form-control:hover {
-	border: 1px solid #428bca;
+    border: 1px solid #428bca;
 }
 .fa {
-	padding-right:5px;
+    padding-right:5px;
 }
 .img-thumbnail {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .img-thumbnail i {
-	font-size: 100px;
-	color: #ddd;
-	margin: 0 auto;
+    font-size: 100px;
+    color: #ddd;
+    margin: 0 auto;
 }
 #abilities table td:nth-child(2):hover{
-	/* Hover for Ability scores */
-	background-color: #eee;
+    /* Hover for Ability scores */
+    background-color: #eee;
 }
 
 /* Modals */
 .modal-header {
-	margin: 0 auto;
-	line-height: 1.5;
-	font-size: 20px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-size: 20px;
 }
 .modal-body {
-	position: relative;
-	padding: 20px;
-	line-height: 30px;
-	font-size: 14px;
-	padding: 17px 30px;
+    position: relative;
+    padding: 20px;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 17px 30px;
 }
 /* data preview */
 .modal-body table td:nth-child(1){
-	font-weight: bold;
-	text-align: right;
-	color: #3276b1;
-	width: 150px;
+    font-weight: bold;
+    text-align: right;
+    color: #3276b1;
+    width: 150px;
 
 }
 .modal-prompt {
-	position: relative;
-	padding: 5px 30px;
-	font-size: 20px;
-	font-style: italic;
+    position: relative;
+    padding: 5px 30px;
+    font-size: 20px;
+    
 }
 .modal-prompt .btn {
-	width: 150px;
-	margin: 15px;
-	padding: 10px 5px;
-	font-size: 20px;
+    width: 150px;
+    margin: 15px;
+    padding: 10px 5px;
+    font-size: 20px;
 }
 .sum {
-	display: block;
-	border-top: 1px solid gray;
-	width: 50%;
-	font-size: 17px
+    display: block;
+    border-top: 1px solid gray;
+    width: 50%;
+    font-size: 17px
 }
 
 /* Buttons */
 .die {
-	width:30px;
-	height:20px;
-	background-image:url('../images/A_Die_clip_art.svg');
-	background-size:23px 23px;
-	background-repeat:no-repeat;
-	background-position:center;
+    width:30px;
+    height:20px;
+    background-image:url('../images/A_Die_clip_art.svg');
+    background-size:23px 23px;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 .die:hover {
-	background-size:28px 28px;
+    background-size:28px 28px;
 }
 
 /* Roll table */
@@ -116,4 +139,14 @@ h2 {
 
 .roll-table tr:last-child {
     border-top: 2px solid #999;
+}
+
+/* Die "loading" animation */
+.die-animation {
+    height: 94px;
+    width: 102px;
+    background-image:url('../images/dice.gif');
+    background-color:#fff;
+    background-repeat: no-repeat;
+    margin-left: 20%;
 }
