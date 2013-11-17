@@ -98,7 +98,7 @@ function editAttack() {
 function rollAttack() {
     attackData['d20roll'] = roll("1d20");
     attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollAttack, attackData));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollToHit, attackData));
 }
 
 // Render feedback after an attack hits/misses
@@ -109,7 +109,7 @@ function attackConfirmation (status){
         console.log(attackData);
         
         
-        $('#roll-modal .modal-prompt').html(Mustache.render(templates.attackDamage, attackData));
+        $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollAttack, attackData));
 
     } else if (status == "miss") {
         $('#roll-modal .modal-prompt').html("Bummer. Your attack missed.");
