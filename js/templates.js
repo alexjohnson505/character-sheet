@@ -10,7 +10,7 @@ var templates = {
 	"viewSkill" : 
 		'<table class="table table-hover"><tr><td>Skill Name</td><td>{{name}}</td></tr>\
 		<tr><td>{{attributeMod}}</td><td>{{attribute}} Modifier</td></tr></table>',
-	"rollSkill" : "You roll a {{roll}} on your {{name}} check. <br>Calculated by rolling a {{d20roll}} (1d20) + Attribute Mod {{attributeMod}}",
+	"rollSkill" : 'You roll: <table class="roll-table"><tr><td></td><td>{{baseRoll}}</td><td><strong>base</strong> ({{baseDice}})</td></tr><tr><td><strong>+</strong></td><td>{{attributeMod}}</td><td><strong>{{attribute}} mod</strong></td></tr><tr><td></td><td><strong>{{roll}}</strong></td><td>total</td></tr></table><p class="triangle-isosceles top">Report this result to your DM</p>',
 	"viewAttack" : 
 		'<table class="table table-hover"><tr><td>Name</td><td>{{name}}</td></tr>\
 		<tr><td>Description</td><td>{{description}}</td></tr>\

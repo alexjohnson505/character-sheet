@@ -107,8 +107,9 @@ function viewSkill (target) {
 
 	skillData = skill;
 	skillData['attributeMod'] = getAttributeMod(skill.attribute);
-	skillData['d20roll'] = roll("1d20");
-	skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
+    skillData['baseDice'] = "1d20"
+	skillData['baseRoll'] = roll(skillData['baseDice']);
+	skillData['sum'] = skillData['attributeMod'] + skillData['baseRoll'];
 
 	var output = Mustache.render(templates.viewSkill, skillData);
 	openModal("Roll a Skill", output);
@@ -121,7 +122,7 @@ function editSkill() {
 
 // Render feedback skill roll
 function rollSkill (){
-	skillData['roll'] = skillData['d20roll'] + skillData['attributeMod'];
+	skillData['roll'] = skillData['baseRoll'] + skillData['attributeMod'];
 	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
 }
 

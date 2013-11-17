@@ -94,3 +94,26 @@ h2 {
 .die:hover {
 	background-size:28px 28px;
 }
+
+/* Roll table */
+
+.roll-table {
+    
+}
+
+.roll-table td:nth-child(1){
+    padding:0px 15px;
+    text-align: left;
+}
+
+.roll-table td:nth-child(2) {
+    text-align: right;
+}
+
+.roll-table td:nth-child(3) {
+    padding: 0px 10px;
+}
+
+.roll-table tr:last-child {
+    border-top: 2px solid #999;
+}
