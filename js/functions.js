@@ -57,7 +57,6 @@ function getAttributeMod (attribute){
 }
 
 // Temporary fake-die-roll calculation
-// TODO: Actually write this function
 function roll (die){
     var splitted = die.split('d');
     return rollNdX(splitted[0], splitted[1]);
@@ -102,13 +101,24 @@ function skillCheck (target) {
 		}
 	};
 
-	var skillData = skill;
+	skillData = skill;
 	skillData['attributeMod'] = getAttributeMod(skill.attribute);
 	skillData['d20roll'] = roll("1d20");
 	skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
 
 	var output = Mustache.render(templates.skillCheck, skillData);
 	openModal("Roll a Skill", output);
+	$('#roll-modal .modal-prompt').html(templates['skill-edit-or-roll']);
+}
+
+function editSkill() {
+	alert("functionality coming soon");
+}
+
+// Render feedback skill roll
+function rollSkill (){
+	skillData['roll'] = skillData['d20roll'] + skillData['attributeMod'];
+	$('#roll-modal .modal-prompt').html(Mustache.render(templates.skillRoll, skillData));
 }
 
 // Roll the damage for a spell
