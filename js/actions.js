@@ -68,10 +68,10 @@ function rollSpell (){
     spellData['inflictedDamage'] = roll(spellData.damage);
     $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSpell, spellData));
 }
+
 /**
  * ATTACKS 
  */
-
 
 // Roll the to-hit and damage for an attack
 function viewAttack (target){
