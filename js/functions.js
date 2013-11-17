@@ -89,6 +89,10 @@ function openModal (title, html) {
 	$('#roll-modal').modal('show');
 }
 
+/**
+ * SKILLS 
+ */
+
 // Performs roll for a skill check
 function viewSkill (target) {
 	var skillName = target;
@@ -106,7 +110,7 @@ function viewSkill (target) {
 	skillData['d20roll'] = roll("1d20");
 	skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
 
-	var output = Mustache.render(templates.skillCheck, skillData);
+	var output = Mustache.render(templates.viewSkill, skillData);
 	openModal("Roll a Skill", output);
 	$('#roll-modal .modal-prompt').html(templates['skill-edit-or-roll']);
 }
@@ -118,8 +122,12 @@ function editSkill() {
 // Render feedback skill roll
 function rollSkill (){
 	skillData['roll'] = skillData['d20roll'] + skillData['attributeMod'];
-	$('#roll-modal .modal-prompt').html(Mustache.render(templates.skillRoll, skillData));
+	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
 }
+
+/**
+ * SPELLS 
+ */
 
 // Roll the damage for a spell
 function viewSpell (target){
@@ -133,14 +141,27 @@ function viewSpell (target){
 		}
 	};
 
-	var spellData = spell;
-	spellData['inflictedDamage'] = roll(spell.damage);
+	spellData = spell;
 	spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
 	spellData['attributeMod'] = getAttributeMod(spell.attribute);
 
-	var output = Mustache.render(templates.spellCast, spellData);
+	var output = Mustache.render(templates.viewSpell, spellData);
 	openModal("Cast a Spell", output);
 }
+
+function editSpell() {
+	alert("functionality coming soon");
+}
+
+// Render feedback skill roll
+function rollSpell (){
+	spellData['inflictedDamage'] = roll(spell.damage);
+	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSpell, spellData));
+}
+/**
+ * ATTACKS 
+ */
+
 
 // Roll the to-hit and damage for an attack
 function viewAttack (target){
@@ -160,7 +181,7 @@ function viewAttack (target){
 	attackData['d20roll'] = roll("1d20");
 	attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
 
-	var output = Mustache.render(templates.weaponAttack, attackData);
+	var output = Mustache.render(templates.viewAttack, attackData);
 	openModal("Make an Attack", output);
 	$('#roll-modal .modal-prompt').html(templates['hit-or-miss']);
 }

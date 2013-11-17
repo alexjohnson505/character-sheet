@@ -1,5 +1,5 @@
 var templates = {
-	"spellCast" : 
+	"viewSpell" : 
 		'<table class="table table-hover"><tr><td>Name</td><td>{{name}}</td></tr>\
 		<tr><td>Description</td><td>{{description}}</td></tr>\
 		<tr><td>Damage Typ</td><td>{{damage-type}}</td></tr>\
@@ -7,11 +7,11 @@ var templates = {
 		<tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr>\
 		<tr><td>Spell DC</td><td>{{spellDC}}</td></tr></table>\
 		<i class="sum"><strong>{{inflictedDamage}} : Spell Damage</strong></i><br>',
-	"skillCheck" : 
+	"viewSkill" : 
 		'<table class="table table-hover"><tr><td>Skill Name</td><td>{{name}}</td></tr>\
 		<tr><td>{{attributeMod}}</td><td>{{attribute}} Modifier</td></tr></table>',
-	"skillRoll" : "You roll a {{roll}} on your {{name}} check. <br>Calculated by rolling a {{d20roll}} (1d20) + Attribute Mod {{attributeMod}}",
-	"weaponAttack" : 
+	"rollSkill" : "You roll a {{roll}} on your {{name}} check. <br>Calculated by rolling a {{d20roll}} (1d20) + Attribute Mod {{attributeMod}}",
+	"viewAttack" : 
 		'<table class="table table-hover"><tr><td>Name</td><td>{{name}}</td></tr>\
 		<tr><td>Description</td><td>{{description}}</td></tr>\
 		<tr><td>Damage</td><td>{{damage}}</td></tr>\
