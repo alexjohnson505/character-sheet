@@ -3,7 +3,7 @@
  * SKILLS
  */
 
-// Performs roll for a skill check
+// view the details of a skill
 function viewSkill (target) {
     var skill;
 
@@ -24,28 +24,22 @@ function viewSkill (target) {
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Skill"}));
 }
 
+// edit the details of a skill
 function editSkill() {
     alert("functionality coming soon");
 }
 
-// Render feedback skill roll
+// roll a skill check
 function rollSkill (){
     skillData['roll'] = skillData['baseRoll'] + skillData['attributeMod'];
-
-    
-    $('#roll-modal .modal-prompt').html(templates["die-animation"]);
-
-    setTimeout( function(){
-        $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
-    }, 900);
+    dieAnimation(templates.rollSkill, skillData);
 }
-
 
 /**
  * SPELLS
  */
 
-// Roll the damage for a spell
+// view the details of a spell
 function viewSpell (target){
     var spell;
 
@@ -65,21 +59,22 @@ function viewSpell (target){
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Spell"}));
 }
 
+// edit the detauls of a spell
 function editSpell() {
     alert("functionality coming soon");
 }
 
-// Render feedback skill roll
+// roll the damage of a spell
 function rollSpell (){
     spellData['inflictedDamage'] = roll(spellData.damage);
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSpell, spellData));
+    dieAnimation(templates.rollSpell, spellData);
 }
 
 /**
  * ATTACKS
  */
 
-// Roll the to-hit and damage for an attack
+// view the details of an attack
 function viewAttack (target){
     var attack;
 
@@ -98,27 +93,38 @@ function viewAttack (target){
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Attack"}));
 }
 
+
+// edit the details of an attack
 function editAttack() {
     alert("functionality coming soon");
 }
 
+// roll the to-hit of an attack, prompt for Hit or Miss
 function rollAttack() {
     attackData['d20roll'] = roll("1d20");
     attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollToHit, attackData));
+    dieAnimation(templates.rollToHit, attackData);
 }
 
-// Render feedback after an attack hits/misses
+// roll the damage of an attack
 function attackConfirmation (status){
     if (status == "hit"){
         attackData['damageRoll'] = roll(attackData['damage']);
         attackData['inflictedDamage'] = attackData['attributeMod'] + attackData['damageRoll'];
 
+        var rollTime = 900;
         var output = Mustache.render(templates.rollAttack, attackData);
     } else if (status == "miss") {
+        var rollTime = 0;
         var output = "Bummer. Your attack missed.";
     }
 
     $('#roll-modal .modal-prompt .dm-prompt, .hit-or-miss').remove();
-    $('#roll-modal .modal-prompt').append(output);
+    
+    $('#roll-modal .modal-prompt').append(templates["die-animation"]);
+
+    setTimeout( function(){
+        $(".die-animation").remove();
+        $('#roll-modal .modal-prompt').append(output);
+    }, rollTime);
 }

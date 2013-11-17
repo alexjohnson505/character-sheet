@@ -88,3 +88,12 @@ function openModal (title, html) {
     // Open Modal Window
     $('#roll-modal').modal('show');
 }
+
+// Show die animation for <1s, then replace with data
+function dieAnimation(template, data){
+    $('#roll-modal .modal-prompt').html(templates["die-animation"]);
+
+    setTimeout( function(){
+        $('#roll-modal .modal-prompt').html(Mustache.render(template, data));
+    }, 900);
+}
