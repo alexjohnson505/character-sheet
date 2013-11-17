@@ -20,7 +20,7 @@ var templates = {
         <tr><td>Damage type</td><td>{{damage-type}}</td></tr>\
         <tr><td>Attribute</td><td>{{attribute}}</td></tr>\
         <tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr></table>',
-    "rollToHit" : 'You roll a {{toHit}} on your To-Hit with your {{name}}. <br>Calculated by rolling a {{d20roll}} (1d20) + Attribute Mod {{attributeMod}} <br> Ask your DM, does this Hit or Miss? <br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
+    "rollToHit" : 'You roll a {{toHit}} on your To-Hit with your {{name}}. <br>Calculated by rolling a {{d20roll}} (1d20) + Attribute Mod {{attributeMod}} <br><a onclick="rollAttack()">Roll Again</a><br><p class="dm-prompt"> Ask your DM, does this Hit or Miss?</p> <br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
     "rollAttack" : "Your attack Hits!!! You inflict {{inflictedDamage}} Damage. <br> Calculated by rolling {{damageRoll}} ({{damage}} die) + {{attributeMod}} Ability Mod",
 
     "edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="edit{{type}}()";>Edit</button><button type="button" class="btn btn-danger" onclick="roll{{type}}()";>Roll</button></div>',

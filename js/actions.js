@@ -107,12 +107,12 @@ function attackConfirmation (status){
     if (status == "hit"){
         attackData['damageRoll'] = roll(attackData['damage']);
         attackData['inflictedDamage'] = attackData['attributeMod'] + attackData['damageRoll'];
-        console.log(attackData);
-        
-        
-        $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollAttack, attackData));
 
+        var output = Mustache.render(templates.rollAttack, attackData);
     } else if (status == "miss") {
-        $('#roll-modal .modal-prompt').html("Bummer. Your attack missed.");
+        var output = "Bummer. Your attack missed.";
     }
+
+    $('#roll-modal .modal-prompt .dm-prompt, .hit-or-miss').remove();
+    $('#roll-modal .modal-prompt').append(output);
 }
