@@ -28,8 +28,8 @@ function viewSkill (target) {
     ]
 
     skillData['sum'] = sumArray(skillData['rollcomps'], 'number');
+    skillData['attributeMod'] = getAttributeMod(skillData['attribute']);
 
-    // skillData['sum'] = skillData['attributeMod'] + skillData['baseRoll'];
     openModal("Roll a Skill", Mustache.render(templates.viewSkill, skillData));
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Skill"}));
 }
