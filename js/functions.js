@@ -17,8 +17,8 @@ function renderCharacterData (){
 // Returns character data formatted as an HTML form.
 function renderCharacterStats (){
     var characterStats = characterData;
-    characterStats['currentHP'] = characterData.hp[0].amount + " Hit Points";
-    characterStats['currentAC'] = characterData.ac[0].amount + " Armor Class";
+    characterStats['currentHP'] = characterData.hp + " Hit Points";
+    characterStats['currentAC'] = characterData.ac + " Armor Class";
 
     return Mustache.render(templates.characterStats, characterStats);
 }
