@@ -21,7 +21,7 @@ function viewSkill (target) {
     skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
 
     openModal("Roll a Skill", Mustache.render(templates.viewSkill, skillData));
-    $('#roll-modal .modal-prompt').html(templates['skill-edit-or-roll']);
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Skill"}));
 }
 
 function editSkill() {
@@ -33,6 +33,7 @@ function rollSkill (){
     skillData['roll'] = skillData['d20roll'] + skillData['attributeMod'];
     $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
 }
+
 
 /**
  * SPELLS 
@@ -55,7 +56,7 @@ function viewSpell (target){
     spellData['attributeMod'] = getAttributeMod(spell.attribute);
 
     openModal("Cast a Spell", Mustache.render(templates.viewSpell, spellData));
-    $('#roll-modal .modal-prompt').html(templates['spell-edit-or-roll']);
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Spell"}));
 }
 
 function editSpell() {
@@ -88,7 +89,7 @@ function viewAttack (target){
     attackData['attributeMod'] = getAttributeMod(attack.attribute);
 
     openModal("Make an Attack", Mustache.render(templates.viewAttack, attackData));
-    $('#roll-modal .modal-prompt').html(templates['attack-edit-or-roll']);
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Attack"}));
 }
 
 function editAttack() {

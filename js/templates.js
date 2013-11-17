@@ -22,10 +22,8 @@ var templates = {
         <tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr></table>',
     "rollToHit" : 'You roll a {{toHit}} on your To-Hit with your {{name}}. <br>Calculated by rolling a {{d20roll}} (1d20) + Attribute Mod {{attributeMod}} <br> Ask your DM, does this Hit or Miss? <br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
     "rollAttack" : "Your attack Hits!!! You inflict {{inflictedDamage}} Damage. <br> Calculated by rolling {{damageRoll}} ({{damage}} die) + {{attributeMod}} Ability Mod",
-    
-    "skill-edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="editSkill()";>Edit</button><button type="button" class="btn btn-danger" onclick="rollSkill()";>Roll</button></div>',
-    "spell-edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="editSpell()";>Edit</button><button type="button" class="btn btn-danger" onclick="rollSpell()";>Roll</button></div>',
-    "attack-edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="editAttack()";>Edit</button><button type="button" class="btn btn-danger" onclick="rollAttack()";>Roll</button></div>',
+
+    "edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="edit{{type}}()";>Edit</button><button type="button" class="btn btn-danger" onclick="roll{{type}}()";>Roll</button></div>',
     
     "footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
     "abilityScore" : "<tr><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>",
