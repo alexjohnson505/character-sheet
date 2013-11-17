@@ -1,5 +1,6 @@
 var templates = {
-	"spellCast" : 'Name : {{name}}<br>\
+	"spellCast" : 
+		'Name : {{name}}<br>\
 		Description : {{description}}<br>\
 		Damage Type : {{damage-type}}<br>\
 		Attribute: {{attribute}}<br>\
@@ -9,7 +10,15 @@ var templates = {
 		Spell DC: {{spellDC}}',
 
 	"skillCheck" : 'Skill: {{name}}<br>{{d20roll}} : 1d20 Base Roll<br>{{attributeMod}} : {{attribute}} Modifier<br><strong><i class="sum">{{sum}} : SUM</strong></i>',
-	"weaponAttack" : 'Name : {{name}}<br>Description : {{description}}<br>Damage : {{damage}}<br>Damage type : {{damage-type}}<br>Attribute: {{attribute}}<br>Attribute Mod: {{attributeMod}}<br>{{d20roll}} : 1d20 Roll<br>You roll a {{toHit}} To-Hit. Ask your DM - does this Hit or Miss?',
+	"weaponAttack" : 
+		'<table class="table table-hover"><tr><td>Name</td><td>{{name}}</td></tr>\
+		<tr><td>Description</td><td>{{description}}</td></tr>\
+		<tr><td>Damage</td><td>{{damage}}</td></tr>\
+		<tr><td>Damage type</td><td>{{damage-type}}</td></tr>\
+		<tr><td>Attribute</td><td>{{attribute}}</td></tr>\
+		<tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr></table>\
+		{{d20roll}}1d20 Roll\
+		You roll a {{toHit}} To-Hit. Ask your DM - does this Hit or Miss?',
 	"hit-or-miss" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
 	"footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
 	"abilityScore" : "<tr><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>",
