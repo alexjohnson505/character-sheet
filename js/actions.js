@@ -31,7 +31,13 @@ function editSkill() {
 // Render feedback skill roll
 function rollSkill (){
     skillData['roll'] = skillData['baseRoll'] + skillData['attributeMod'];
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
+
+    
+    $('#roll-modal .modal-prompt').html(templates["die-animation"]);
+
+    setTimeout( function(){
+        $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
+    }, 900);
 }
 
 

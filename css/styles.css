@@ -117,3 +117,13 @@ h2 {
 .roll-table tr:last-child {
     border-top: 2px solid #999;
 }
+
+/* Die "loading" animation */
+.die-animation {
+	height: 94px;
+	width: 102px;
+	background-image:url('../images/dice.gif');
+	background-color:#fff;
+	background-repeat: no-repeat;
+	margin-left: 20%;
+}
