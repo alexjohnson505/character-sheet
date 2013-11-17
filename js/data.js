@@ -95,3 +95,17 @@ var characterData = {
         },
     ],
 }
+
+var changeHistory = [{
+    "target" : "abilities.STR",
+    "change" : 1,
+    "description" : "Obtained helmet of strength"
+},{
+    "target" : "hp",
+    "change" : -4,
+    "description" : "Arrow damage" 
+},{
+    "target" : "hp",
+    "change" : +12,
+    "description" : "Heal Spell"
+}]
