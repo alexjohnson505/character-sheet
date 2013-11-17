@@ -37,12 +37,6 @@ h2 {
 	color: #ddd;
 	margin: 0 auto;
 }
-/*table td:nth-child(1){
-	font-weight: bold;
-	text-align: right;
-	color: #3276b1;
-
-}*/
 #abilities table td:nth-child(2):hover{
 	/* Hover for Ability scores */
 	background-color: #eee;
@@ -60,6 +54,14 @@ h2 {
 	line-height: 30px;
 	font-size: 14px;
 	padding: 17px 30px;
+}
+/* data preview */
+.modal-body table td:nth-child(1){
+	font-weight: bold;
+	text-align: right;
+	color: #3276b1;
+	width: 150px;
+
 }
 .modal-prompt {
 	position: relative;

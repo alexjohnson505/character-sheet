@@ -124,7 +124,7 @@ function rollSpell (target){
 	};
 
 	var spellData = spell;
-	spellData['damage'] = roll(spell.damage);
+	spellData['inflictedDamage'] = roll(spell.damage);
 	spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
 	spellData['attributeMod'] = getAttributeMod(spell.attribute);
 
