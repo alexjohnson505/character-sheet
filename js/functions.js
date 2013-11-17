@@ -90,7 +90,7 @@ function openModal (title, html) {
 }
 
 // Performs roll for a skill check
-function skillCheck (target) {
+function viewSkill (target) {
 	var skillName = target;
 	var skill;
 
@@ -122,7 +122,7 @@ function rollSkill (){
 }
 
 // Roll the damage for a spell
-function rollSpell (target){
+function viewSpell (target){
 	var spellName = target;
 	var spell;
 
@@ -143,7 +143,7 @@ function rollSpell (target){
 }
 
 // Roll the to-hit and damage for an attack
-function rollAttack (target){
+function viewAttack (target){
 	var attackName = target;
 	var attack;
 
