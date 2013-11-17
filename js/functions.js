@@ -57,7 +57,6 @@ function getAttributeMod (attribute){
 }
 
 // Temporary fake-die-roll calculation
-// TODO: Actually write this function
 function roll (die){
     var splitted = die.split('d');
     return rollNdX(splitted[0], splitted[1]);
@@ -90,8 +89,12 @@ function openModal (title, html) {
 	$('#roll-modal').modal('show');
 }
 
+/**
+ * SKILLS 
+ */
+
 // Performs roll for a skill check
-function skillCheck (target) {
+function viewSkill (target) {
 	var skillName = target;
 	var skill;
 
@@ -102,17 +105,32 @@ function skillCheck (target) {
 		}
 	};
 
-	var skillData = skill;
+	skillData = skill;
 	skillData['attributeMod'] = getAttributeMod(skill.attribute);
 	skillData['d20roll'] = roll("1d20");
 	skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
 
-	var output = Mustache.render(templates.skillCheck, skillData);
+	var output = Mustache.render(templates.viewSkill, skillData);
 	openModal("Roll a Skill", output);
+	$('#roll-modal .modal-prompt').html(templates['skill-edit-or-roll']);
 }
 
+function editSkill() {
+	alert("functionality coming soon");
+}
+
+// Render feedback skill roll
+function rollSkill (){
+	skillData['roll'] = skillData['d20roll'] + skillData['attributeMod'];
+	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
+}
+
+/**
+ * SPELLS 
+ */
+
 // Roll the damage for a spell
-function rollSpell (target){
+function viewSpell (target){
 	var spellName = target;
 	var spell;
 
@@ -123,17 +141,31 @@ function rollSpell (target){
 		}
 	};
 
-	var spellData = spell;
-	spellData['damage'] = roll(spell.damage);
+	spellData = spell;
 	spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
 	spellData['attributeMod'] = getAttributeMod(spell.attribute);
 
-	var output = Mustache.render(templates.spellCast, spellData);
+	var output = Mustache.render(templates.viewSpell, spellData);
 	openModal("Cast a Spell", output);
+	$('#roll-modal .modal-prompt').html(templates['spell-edit-or-roll']);
 }
 
+function editSpell() {
+	alert("functionality coming soon");
+}
+
+// Render feedback skill roll
+function rollSpell (){
+	spellData['inflictedDamage'] = roll(spellData.damage);
+	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSpell, spellData));
+}
+/**
+ * ATTACKS 
+ */
+
+
 // Roll the to-hit and damage for an attack
-function rollAttack (target){
+function viewAttack (target){
 	var attackName = target;
 	var attack;
 
@@ -150,9 +182,13 @@ function rollAttack (target){
 	attackData['d20roll'] = roll("1d20");
 	attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
 
-	var output = Mustache.render(templates.weaponAttack, attackData);
+	var output = Mustache.render(templates.viewAttack, attackData);
 	openModal("Make an Attack", output);
 	$('#roll-modal .modal-prompt').html(templates['hit-or-miss']);
+}
+
+function editAttack() {
+	alert("functionality coming soon");
 }
 
 // Render feedback after an attack hits/misses
@@ -164,4 +200,8 @@ function attackConfirmation (status){
 	} else if (status == "miss") {
 		$('#roll-modal .modal-prompt').html("Bummer. Your attack missed.   ");
 	}
+}
+
+function rollAttack() {
+	alert("functionality coming soon");
 }
