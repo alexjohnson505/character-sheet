@@ -21,6 +21,15 @@ function renderCharacterStats (){
     return Mustache.render(templates.characterStats, characterStats);
 }
 
+// 
+function sumArray(arr, key) {
+    var total = 0; 
+    $.each(arr, function() {
+        total += this[key];
+    });
+    return total
+}
+
 // Return character abilities rendered as HTML table rows
 function renderCharacterAbilities(){
     // Associate arrays are annoying to loop through, so we

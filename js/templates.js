@@ -11,8 +11,8 @@ var templates = {
     "viewSkill" : 
         '<table class="table table-hover"><tr><td>Skill Name</td><td>{{name}}</td></tr>\
         <tr><td>{{attributeMod}}</td><td>{{attribute}} Modifier</td></tr></table>',
-	"rollSkill" : 'You roll: <table class="roll-table"><tr><td></td><td>{{baseRoll}}</td><td><strong>base</strong> ({{baseDice}})</td></tr><tr><td><strong>+</strong></td><td>{{attributeMod}}</td><td><strong>{{attribute}} mod</strong></td></tr><tr><td></td><td><strong>{{roll}}</strong></td><td>total</td></tr></table><p class="triangle-isosceles top">Report this result to your DM</p>',
-    
+    "rollMods" : '<strong>{{title}}</strong>: <table class="roll-table">{{#rollcomps}}<tr><td><strong>{{spec}}</strong></td><td>{{{number}}}</td><td>{{{desc}}}</td></tr>{{/rollcomps}}<tr><td></td><td>{{sum}}</td><td><strong>total</strong></td></tr></table>',
+    "dmPrompt" : '<p class="triangle-isosceles top">{{message}}</p>',
     "viewAttack" : 
         '<table class="table table-hover"><tr><td>Name</td><td>{{name}}</td></tr>\
         <tr><td>Description</td><td>{{description}}</td></tr>\
@@ -20,7 +20,7 @@ var templates = {
         <tr><td>Damage type</td><td>{{damage-type}}</td></tr>\
         <tr><td>Attribute</td><td>{{attribute}}</td></tr>\
         <tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr></table>',
-    "rollToHit" : 'You roll a {{toHit}} on your To-Hit with your {{name}}. <br>Calculated by rolling a {{d20roll}} (1d20) + Attribute Mod {{attributeMod}} <br><a onclick="rollAttack()">Roll Again</a><br><p class="dm-prompt"> Ask your DM, does this Hit or Miss?</p> <br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
+    "confToHit" : '<a onclick="rollAttack()">Roll Again</a><br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
     "rollAttack" : "Your attack Hits!!! You inflict {{inflictedDamage}} Damage. <br> Calculated by rolling {{damageRoll}} ({{damage}} die) + {{attributeMod}} Ability Mod",
 
     "edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="edit{{type}}()";>Edit</button><button type="button" class="btn btn-danger" onclick="roll{{type}}()";>Roll</button></div>',

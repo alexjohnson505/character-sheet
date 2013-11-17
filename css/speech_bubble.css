@@ -49,12 +49,14 @@ is to other properties or values in creating the effect */
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
 	border-radius:10px;
+        display: block;
 }
 
 /* Variant : for top positioned triangle
 ------------------------------------------ */
 
 .triangle-isosceles.top {
+    display:block;
 }
 
 /* Variant : for left/right positioned triangle
