@@ -14,13 +14,13 @@ function viewSkill (target) {
 		}
 	};
 
+	// global variable - saves last used spell
 	skillData = skill;
 	skillData['attributeMod'] = getAttributeMod(skill.attribute);
 	skillData['d20roll'] = roll("1d20");
 	skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
 
-	var output = Mustache.render(templates.viewSkill, skillData);
-	openModal("Roll a Skill", output);
+	openModal("Roll a Skill", Mustache.render(templates.viewSkill, skillData));
 	$('#roll-modal .modal-prompt').html(templates['skill-edit-or-roll']);
 }
 
@@ -49,12 +49,12 @@ function viewSpell (target){
 		}
 	};
 
+	// global variable - saves last used spell
 	spellData = spell;
 	spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
 	spellData['attributeMod'] = getAttributeMod(spell.attribute);
 
-	var output = Mustache.render(templates.viewSpell, spellData);
-	openModal("Cast a Spell", output);
+	openModal("Cast a Spell", Mustache.render(templates.viewSpell, spellData));
 	$('#roll-modal .modal-prompt').html(templates['spell-edit-or-roll']);
 }
 
@@ -83,32 +83,35 @@ function viewAttack (target){
 		}
 	};
 
-	// attackData: global variables to save the last used attack
+	// global variable - saves last used attack
 	attackData = attack;
 	attackData['attributeMod'] = getAttributeMod(attack.attribute);
-	attackData['d20roll'] = roll("1d20");
-	attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
 
-	var output = Mustache.render(templates.viewAttack, attackData);
-	openModal("Make an Attack", output);
-	$('#roll-modal .modal-prompt').html(templates['hit-or-miss']);
+	openModal("Make an Attack", Mustache.render(templates.viewAttack, attackData));
+	$('#roll-modal .modal-prompt').html(templates['attack-edit-or-roll']);
 }
 
 function editAttack() {
 	alert("functionality coming soon");
 }
 
+function rollAttack() {
+	attackData['d20roll'] = roll("1d20");
+	attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
+	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollAttack, attackData));
+}
+
 // Render feedback after an attack hits/misses
 function attackConfirmation (status){
 	if (status == "hit"){
-		var damage = attackData['d20roll'] + attackData['attributeMod'] + roll(attackData['damage']);
-		$('#roll-modal .modal-prompt').html("<br>Your attack Hits!!!!<strong>  " + damage + " DAMAGE</strong>");
+		attackData['damageRoll'] = roll(attackData['damage']);
+		attackData['inflictedDamage'] = attackData['attributeMod'] + attackData['damageRoll'];
+		console.log(attackData);
+		
+		
+		$('#roll-modal .modal-prompt').html(Mustache.render(templates.attackDamage, attackData));
 
 	} else if (status == "miss") {
-		$('#roll-modal .modal-prompt').html("Bummer. Your attack missed.   ");
+		$('#roll-modal .modal-prompt').html("Bummer. Your attack missed.");
 	}
-}
-
-function rollAttack() {
-	alert("functionality coming soon");
 }
