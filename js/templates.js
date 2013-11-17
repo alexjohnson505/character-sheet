@@ -20,7 +20,7 @@ var templates = {
         <tr><td>Damage type</td><td>{{damage-type}}</td></tr>\
         <tr><td>Attribute</td><td>{{attribute}}</td></tr>\
         <tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr></table>',
-    "confToHit" : '<a onclick="rollAttack()">Roll Again</a><br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
+    "confToHit" : '<a class="rollagain" onclick="rollAttack()">Roll Again</a><br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
     "rollAttack" : "Your attack Hits!!! You inflict {{inflictedDamage}} Damage. <br> Calculated by rolling {{damageRoll}} ({{damage}} die) + {{attributeMod}} Ability Mod",
 
     "edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-default" onclick="edit{{type}}()";>Edit</button><button type="button" class="btn btn-danger" onclick="roll{{type}}()";>Roll</button></div>',

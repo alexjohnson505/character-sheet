@@ -169,6 +169,7 @@ function attackConfirmation (status){
     $('#roll-modal .modal-prompt').append(templates["die-animation"]);
 
     setTimeout( function(){
+        $(".rollagain").remove();
         $(".triangle-isosceles").remove();
         $(".die-animation").remove();
         $('#roll-modal .modal-prompt').append(output);
