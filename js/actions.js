@@ -5,33 +5,33 @@
 
 // Performs roll for a skill check
 function viewSkill (target) {
-	var skill;
+    var skill;
 
-	// Find the skill
-	for (var i = characterData.skills.length - 1; i >= 0; i--) {
-		if (characterData.skills[i].name == target) {
-			skill = characterData.skills[i];
-		}
-	};
+    // Find the skill
+    for (var i = characterData.skills.length - 1; i >= 0; i--) {
+        if (characterData.skills[i].name == target) {
+            skill = characterData.skills[i];
+        }
+    };
 
-	// global variable - saves last used spell
-	skillData = skill;
-	skillData['attributeMod'] = getAttributeMod(skill.attribute);
-	skillData['d20roll'] = roll("1d20");
-	skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
+    // global variable - saves last used spell
+    skillData = skill;
+    skillData['attributeMod'] = getAttributeMod(skill.attribute);
+    skillData['d20roll'] = roll("1d20");
+    skillData['sum'] = skillData['attributeMod'] + skillData['d20roll'];
 
-	openModal("Roll a Skill", Mustache.render(templates.viewSkill, skillData));
-	$('#roll-modal .modal-prompt').html(templates['skill-edit-or-roll']);
+    openModal("Roll a Skill", Mustache.render(templates.viewSkill, skillData));
+    $('#roll-modal .modal-prompt').html(templates['skill-edit-or-roll']);
 }
 
 function editSkill() {
-	alert("functionality coming soon");
+    alert("functionality coming soon");
 }
 
 // Render feedback skill roll
 function rollSkill (){
-	skillData['roll'] = skillData['d20roll'] + skillData['attributeMod'];
-	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
+    skillData['roll'] = skillData['d20roll'] + skillData['attributeMod'];
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
 }
 
 /**
@@ -40,32 +40,32 @@ function rollSkill (){
 
 // Roll the damage for a spell
 function viewSpell (target){
-	var spell;
+    var spell;
 
-	// Find the spell
-	for (var i = characterData.spells.length - 1; i >= 0; i--) {
-		if (characterData.spells[i].name == target) {
-			spell = characterData.spells[i];
-		}
-	};
+    // Find the spell
+    for (var i = characterData.spells.length - 1; i >= 0; i--) {
+        if (characterData.spells[i].name == target) {
+            spell = characterData.spells[i];
+        }
+    };
 
-	// global variable - saves last used spell
-	spellData = spell;
-	spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
-	spellData['attributeMod'] = getAttributeMod(spell.attribute);
+    // global variable - saves last used spell
+    spellData = spell;
+    spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
+    spellData['attributeMod'] = getAttributeMod(spell.attribute);
 
-	openModal("Cast a Spell", Mustache.render(templates.viewSpell, spellData));
-	$('#roll-modal .modal-prompt').html(templates['spell-edit-or-roll']);
+    openModal("Cast a Spell", Mustache.render(templates.viewSpell, spellData));
+    $('#roll-modal .modal-prompt').html(templates['spell-edit-or-roll']);
 }
 
 function editSpell() {
-	alert("functionality coming soon");
+    alert("functionality coming soon");
 }
 
 // Render feedback skill roll
 function rollSpell (){
-	spellData['inflictedDamage'] = roll(spellData.damage);
-	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSpell, spellData));
+    spellData['inflictedDamage'] = roll(spellData.damage);
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSpell, spellData));
 }
 /**
  * ATTACKS 
@@ -74,44 +74,44 @@ function rollSpell (){
 
 // Roll the to-hit and damage for an attack
 function viewAttack (target){
-	var attack;
+    var attack;
 
-	// Find the attack
-	for (var i = characterData.attacks.length - 1; i >= 0; i--) {
-		if (characterData.attacks[i].name == target) {
-			attack = characterData.attacks[i];
-		}
-	};
+    // Find the attack
+    for (var i = characterData.attacks.length - 1; i >= 0; i--) {
+        if (characterData.attacks[i].name == target) {
+            attack = characterData.attacks[i];
+        }
+    };
 
-	// global variable - saves last used attack
-	attackData = attack;
-	attackData['attributeMod'] = getAttributeMod(attack.attribute);
+    // global variable - saves last used attack
+    attackData = attack;
+    attackData['attributeMod'] = getAttributeMod(attack.attribute);
 
-	openModal("Make an Attack", Mustache.render(templates.viewAttack, attackData));
-	$('#roll-modal .modal-prompt').html(templates['attack-edit-or-roll']);
+    openModal("Make an Attack", Mustache.render(templates.viewAttack, attackData));
+    $('#roll-modal .modal-prompt').html(templates['attack-edit-or-roll']);
 }
 
 function editAttack() {
-	alert("functionality coming soon");
+    alert("functionality coming soon");
 }
 
 function rollAttack() {
-	attackData['d20roll'] = roll("1d20");
-	attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
-	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollAttack, attackData));
+    attackData['d20roll'] = roll("1d20");
+    attackData['toHit'] = attackData['d20roll'] + attackData['attributeMod'];
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollAttack, attackData));
 }
 
 // Render feedback after an attack hits/misses
 function attackConfirmation (status){
-	if (status == "hit"){
-		attackData['damageRoll'] = roll(attackData['damage']);
-		attackData['inflictedDamage'] = attackData['attributeMod'] + attackData['damageRoll'];
-		console.log(attackData);
-		
-		
-		$('#roll-modal .modal-prompt').html(Mustache.render(templates.attackDamage, attackData));
+    if (status == "hit"){
+        attackData['damageRoll'] = roll(attackData['damage']);
+        attackData['inflictedDamage'] = attackData['attributeMod'] + attackData['damageRoll'];
+        console.log(attackData);
+        
+        
+        $('#roll-modal .modal-prompt').html(Mustache.render(templates.attackDamage, attackData));
 
-	} else if (status == "miss") {
-		$('#roll-modal .modal-prompt').html("Bummer. Your attack missed.");
-	}
+    } else if (status == "miss") {
+        $('#roll-modal .modal-prompt').html("Bummer. Your attack missed.");
+    }
 }
