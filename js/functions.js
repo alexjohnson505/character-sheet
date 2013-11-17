@@ -147,6 +147,7 @@ function viewSpell (target){
 
 	var output = Mustache.render(templates.viewSpell, spellData);
 	openModal("Cast a Spell", output);
+	$('#roll-modal .modal-prompt').html(templates['spell-edit-or-roll']);
 }
 
 function editSpell() {
@@ -155,7 +156,7 @@ function editSpell() {
 
 // Render feedback skill roll
 function rollSpell (){
-	spellData['inflictedDamage'] = roll(spell.damage);
+	spellData['inflictedDamage'] = roll(spellData.damage);
 	$('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSpell, spellData));
 }
 /**
@@ -186,6 +187,10 @@ function viewAttack (target){
 	$('#roll-modal .modal-prompt').html(templates['hit-or-miss']);
 }
 
+function editAttack() {
+	alert("functionality coming soon");
+}
+
 // Render feedback after an attack hits/misses
 function attackConfirmation (status){
 	if (status == "hit"){
@@ -195,4 +200,8 @@ function attackConfirmation (status){
 	} else if (status == "miss") {
 		$('#roll-modal .modal-prompt').html("Bummer. Your attack missed.   ");
 	}
+}
+
+function rollAttack() {
+	alert("functionality coming soon");
 }

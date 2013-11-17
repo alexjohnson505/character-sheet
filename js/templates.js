@@ -5,8 +5,8 @@ var templates = {
 		<tr><td>Damage Typ</td><td>{{damage-type}}</td></tr>\
 		<tr><td>Attribute</td><td>{{attribute}}</td></tr>\
 		<tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr>\
-		<tr><td>Spell DC</td><td>{{spellDC}}</td></tr></table>\
-		<i class="sum"><strong>{{inflictedDamage}} : Spell Damage</strong></i><br>',
+		<tr><td>Spell DC</td><td>{{spellDC}}</td></tr></table>',
+	"rollSpell" : "Your spell {{name}} inflicts {{inflictedDamage}}. <br> Calculated by rolling {{damage}}",
 	"viewSkill" : 
 		'<table class="table table-hover"><tr><td>Skill Name</td><td>{{name}}</td></tr>\
 		<tr><td>{{attributeMod}}</td><td>{{attribute}} Modifier</td></tr></table>',
@@ -21,7 +21,7 @@ var templates = {
 		{{d20roll}}1d20 Roll\
 		You roll a {{toHit}} To-Hit. Ask your DM - does this Hit or Miss?',
 	"skill-edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="editSkill(\'hit\')";>Edit</button><button type="button" class="btn btn-danger" onclick="rollSkill(\'miss\')";>Roll</button></div>',
-	"spell-edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="editSkill(\'hit\')";>Edit</button><button type="button" class="btn btn-danger" onclick="rollSpell(\'miss\')";>Roll</button></div>',
+	"spell-edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="editSpell(\'hit\')";>Edit</button><button type="button" class="btn btn-danger" onclick="rollSpell(\'miss\')";>Roll</button></div>',
 	"hit-or-miss" : '<div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
 	"footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
 	"abilityScore" : "<tr><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>",
