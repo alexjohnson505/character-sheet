@@ -46,6 +46,9 @@ h2 {
     margin: 10px auto;
 
 }
+#character input {
+    margin-bottom: 15px;
+}
 .form-control:hover {
     border: 1px solid #428bca;
 }
@@ -90,7 +93,7 @@ h2 {
     position: relative;
     padding: 5px 30px;
     font-size: 20px;
-    
+
 }
 .modal-prompt .btn {
     width: 150px;
@@ -121,7 +124,7 @@ h2 {
 /* Roll table */
 
 .roll-table {
-    
+
 }
 
 .roll-table td:nth-child(1){
