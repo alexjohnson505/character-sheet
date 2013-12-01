@@ -46,8 +46,8 @@ var templates = {
 
     "die-animation" : "<div class='die-animation'></div>",
 
-    "skill"  :  '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="viewSkill(\'{{name}}\');"></td></tr>',
-    "attack" :  '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="viewAttack(\'{{name}}\');"></td></tr>',
-    "spell"  :  '<tr><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die" onclick="viewSpell(\'{{name}}\');"></td></tr>',
+    "skill"  :  '<tr onclick="viewSkill(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',
+    "attack" :  '<tr onclick="viewAttack(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',
+    "spell"  :  '<tr onclick="viewSpell(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',
     "history"  :  '<tr><td>{{target}}</td><td>{{change}}</td><td>{{description}}</td></tr>'
 }
