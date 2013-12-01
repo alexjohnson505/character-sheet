@@ -101,15 +101,24 @@ function editSpell() {
          'value' : spellData['name'],
          'placeholder' : '',
         },
-        {'label' : 'Attribute',
+        {'key' : 'attribute',
+         'label' : 'Attribute',
          'value' : spellData['attribute'],
          'placeholder' : '',
         },
-        {'label' : 'Description',
+        {'key' : 'description',
+         'label' : 'Description',
          'value' : spellData['description'],
          'placeholder' : '',
         },
-        {'Icon' : 'yeah',
+        {'key' : 'damage-type',
+         'label' : 'Damage Type',
+         'value' : spellData['damage-type'],
+         'placeholder' : '',
+        },
+        {
+         'key' : 'icon',
+         'label' : 'Icon',
          'value' : spellData['icon'],
          'placeholder' : '',
         }
@@ -139,7 +148,8 @@ function newSpell() {
 
 // Saves user-entered data to characterData
 function saveSpell() {
-
+    var data = $('#editForm').form();
+    console.log(data);
 }
 
 /**
@@ -162,19 +172,23 @@ function editAttack() {
     
     var data = [];
     data['formRows'] = [
-        {'label' : 'Attack Name',
+        {'key' : 'name',
+         'label' : 'Attack Name',
          'value' : attackData['name'],
          'placeholder' : '',
         },
-        {'label' : 'Description',
+        {'key' : 'description',
+         'label' : 'Description',
          'value' : attackData['description'],
          'placeholder' : '',
         },
-        {'label' : 'Damage',
+        {'key' : 'damage',
+         'label' : 'Damage',
          'value' : attackData['damage'],
          'placeholder' : '',
         },
-        {'label' : 'Attribute',
+        {'key' : 'attribute',
+         'label' : 'Attribute',
          'value' : attackData['attribute'],
          'placeholder' : '',
         },
@@ -254,7 +268,8 @@ function newAttack() {
 
 // Saves user-entered data to characterData
 function saveAttack() {
-
+    var data = $('#editForm').form();
+    console.log(data);
 }
 
 // edit ability scores

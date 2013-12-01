@@ -28,4 +28,4 @@ Mustache is a logic-less template syntax. It can be used for HTML, config files,
 #Contributors:
 
 * __Alex Johnson__ [@alexjohnson505](https://github.com/alexjohnson505)
-* __William Johnston__ []()
+* __William Johnston__ [@wj2](https://github.com/wj2)
