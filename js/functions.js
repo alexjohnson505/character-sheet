@@ -1,5 +1,10 @@
 // Populate DOM with character specific data
 function renderCharacterData (){
+    if(typeof(Storage)!=="undefined") {
+        characterData = JSON.parse(localStorage.characterData);
+    } else {
+        alert("Could not find saved character. Loading default character");
+    }
     // Stats
     $('#character .panel-body').html(renderCharacterStats())
     // Abilities
@@ -120,3 +125,13 @@ $.fn.form = function() {
     })
     return formData;
 };
+
+// Store current character to local storage
+function saveData() {
+    if(typeof(Storage)!=="undefined") {
+        localStorage.characterData = JSON.stringify(characterData);
+    } else {
+        alert("Error using web storage. Character data was not saved. Please use the Export Character functionality");
+    }
+    renderCharacterData();
+}

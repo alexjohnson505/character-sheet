@@ -65,7 +65,9 @@ function newSkill() {
 // Saves user-entered data to characterData
 function saveSkill() {
     var data = $('#editForm').form();
+    characterData.skills[data.name] = data;
     console.log(data);
+    saveData();
 }
 
 // roll a skill check
@@ -149,7 +151,9 @@ function newSpell() {
 // Saves user-entered data to characterData
 function saveSpell() {
     var data = $('#editForm').form();
+    characterData.spells[data.name] = data;
     console.log(data);
+    saveData();
 }
 
 /**
@@ -269,7 +273,9 @@ function newAttack() {
 // Saves user-entered data to characterData
 function saveAttack() {
     var data = $('#editForm').form();
+    characterData.attacks[data.name] = data;
     console.log(data);
+    saveData();
 }
 
 // edit ability scores
