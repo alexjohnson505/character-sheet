@@ -6,7 +6,6 @@ D&D Digital Character Sheet
 - Write in local saving functionality
 - Setup API
 - Icon support
-- Move save button to bottom of Modals
 - Pulldown for selecting Attribute
 
 # Bugs:

@@ -274,20 +274,19 @@ function saveAttack() {
 
 // edit ability scores
 function editAbility (target) {
-    var ability = [];
-
+    ability = target;
     var data = [];
 
     data['custom'] = '<div class="form-group"><label class="col-sm-3 control-label">Attribute</label><div class="col-sm-9">' +
 '<p class="form-control-static">'+target+'</p></div></div>';
 
     data['formRows'] = [
-        {
+        {'key' : 'name',
          'label' : 'Update Value',
-         'value' : characterData.abilities[target],
+         'value' : characterData.abilities[ability],
          'placeholder' : '',
         },
-        {
+        {'key' : 'comment',
          'label' : 'Comments',
          'value' : "",
          'placeholder' : '',
@@ -295,4 +294,12 @@ function editAbility (target) {
     ]
     
     openModal("Edit an Ability Score", Mustache.render(templates['editForm'], data));
+        $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], {type: "Ability"}));
+}
+
+// Saves user-entered data to characterData
+function saveAbility() {
+    var data = $('#editForm').form();
+    data['ability'] = ability;
+    console.log(data);
 }
