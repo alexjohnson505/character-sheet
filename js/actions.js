@@ -169,7 +169,7 @@ function viewAttack (target){
 
 // edit the details of an attack
 function editAttack() {
-    
+
     var data = [];
     data['formRows'] = [
         {'key' : 'name',
@@ -195,7 +195,7 @@ function editAttack() {
         {'label' : 'Icon',
          'value' : attackData['icon'],
          'placeholder' : '',
-        }        
+        }
     ]
 
     $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
@@ -292,7 +292,7 @@ function editAbility (target) {
          'placeholder' : '',
         }
     ]
-    
+
     openModal("Edit an Ability Score", Mustache.render(templates['editForm'], data));
         $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], {type: "Ability"}));
 }
@@ -302,4 +302,19 @@ function saveAbility() {
     var data = $('#editForm').form();
     data['ability'] = ability;
     console.log(data);
+}
+
+
+function importCharacter() {
+    openModal("Import Character", Mustache.render(templates.importCharacter));
+}
+
+function exportCharacter(){
+    openModal("Export Character", Mustache.render(templates.exportCharacter, {data : JSON.stringify(characterData)}));
+}
+
+function loadCharacter() {
+    console.log($("#roll-modal textarea")[0].value);
+    characterData = JSON.parse($("#roll-modal textarea")[0].value);
+    renderCharacterData();
 }
