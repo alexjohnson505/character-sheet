@@ -133,3 +133,11 @@ function getAttack(target){
         }
     };
 }
+
+$.fn.form = function() {
+    var formData = {};
+    this.find('[name]').each(function() {
+        formData[this.name] = this.value;  
+    })
+    return formData;
+};

@@ -29,26 +29,30 @@ function viewSkill (target) {
 function editSkill() {
     var data = [];
     data['formRows'] = [
-        {'label' : 'Skill Name',
+        {'key' : 'name',
+         'label' : 'Spell Name',
          'value' : skillData['name'],
          'placeholder' : '',
         },
-        {'label' : 'Attribute',
+        {'key' : 'attribute',
+         'label' : 'Attribute',
          'value' : skillData['attribute'],
          'placeholder' : '',
         },
-        {'label' : 'Description',
+        {'key' : 'description',
+         'label' : 'Description',
          'value' : skillData['description'],
          'placeholder' : '',
         },
-        {'Icon' : 'yeah',
+        {'key' : 'icon',
+         'Icon' : 'yeah',
          'value' : skillData['icon'],
          'placeholder' : '',
         }
     ]
 
     $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], data));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], {type: "Skill"}));
 }
 
 // create a new skill
@@ -60,7 +64,8 @@ function newSkill() {
 
 // Saves user-entered data to characterData
 function saveSkill() {
-
+    var data = $('#editForm').form();
+    console.log(data);
 }
 
 // roll a skill check
@@ -90,7 +95,9 @@ function viewSpell (target){
 function editSpell() {
     var data = [];
     data['formRows'] = [
-        {'label' : 'Spell Name',
+        {
+         'key' : 'name',
+         'label' : 'Spell Name',
          'value' : spellData['name'],
          'placeholder' : '',
         },
@@ -109,7 +116,7 @@ function editSpell() {
     ]
 
     $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], data));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], {type: "Spell"}));
 }
 
 // roll the damage of a spell
@@ -178,7 +185,7 @@ function editAttack() {
     ]
 
     $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], data));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], {type: "Attack"}));
 }
 
 // roll the to-hit of an attack, prompt for Hit or Miss
