@@ -175,3 +175,14 @@ function attackConfirmation (status){
         $('#roll-modal .modal-prompt').append(output);
     }, rollTime);
 }
+// edit ability scores
+function editAbility (target) {
+    var ability = [];
+
+    ability["attribute"] = target;
+    ability["currentValue"] = characterData.abilities[target];
+    
+    openModal("Edit an Ability Score", Mustache.render(templates.editAbility, ability));
+}
+
+

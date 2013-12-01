@@ -49,7 +49,7 @@ h2 {
 #character input {
     margin-bottom: 15px;
 }
-.form-control:hover {
+.form-control:hover{
     border: 1px solid #428bca;
 }
 .fa {
@@ -63,11 +63,6 @@ h2 {
     color: #ddd;
     margin: 0 auto;
 }
-#abilities table td:nth-child(2):hover{
-    /* Hover for Ability scores */
-    background-color: #eee;
-}
-
 /* Modals */
 .modal-header {
     margin: 0 auto;

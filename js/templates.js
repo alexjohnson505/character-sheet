@@ -26,7 +26,33 @@ var templates = {
     "edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-default" onclick="edit{{type}}()";>Edit</button><button type="button" class="btn btn-danger" onclick="roll{{type}}()";>Roll</button></div>',
 
     "footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
-    "abilityScore" : "<tr><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>",
+    "abilityScore" : '<tr onclick="editAbility(\'{{attributeName}}\');"><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>',
+    "editAbility" : 
+        '<form class="form-horizontal" role="form">\
+          <div class="form-group">\
+            <label class="col-sm-4 control-label">Attribute</label>\
+            <div class="col-sm-8">\
+              <p class="form-control-static">{{attribute}}</p>\
+            </div>\
+          </div>\
+          <div class="form-group">\
+            <label class="col-sm-4 control-label">Updated Value</label>\
+            <div class="col-sm-8">\
+              <input class="form-control" value="{{currentValue}}">\
+            </div>\
+          </div>\
+        <div class="form-group">\
+            <label class="col-sm-4 control-label">Comments</label>\
+            <div class="col-sm-8">\
+              <input class="form-control" placeholder="Acquired hat of Fortitude">\
+            </div>\
+          </div>\
+          <div class="form-group">\
+            <div class="col-sm-offset-2 col-sm-10">\
+              <button type="submit" class="btn btn-primary">Update</button>\
+            </div>\
+          </div>\
+        </form>',
     "characterStats" : '<div class="img-thumbnail"><i class="fa fa-picture-o"></i></div><form class="form-horizontal"><div class="form-group"><label class="col-sm-4 control-label">Name</label><div class="col-sm-8"><input type="name" class="form-control" value="{{name}}"></input></div><label class="col-sm-4 control-label">Class</label><div class="col-sm-8"><input type="class" class="form-control" value="{{class}}""></input></div><label class="col-sm-4 control-label" >Race</label><div class="col-sm-8"><input type="email" class="form-control" value="{{race}}"></input></div><label class="col-sm-4 control-label"><i class="fa fa-heart"></i> HP</label><div class="col-sm-8"><input type="currentHP" class="form-control" value="{{currentHP}}"></input></div><label class="col-sm-4 control-label"><i class="fa fa-shield"></i>AC</label><div class="col-sm-8"><input type="currentAC" class="form-control" value="{{currentAC}}"></input></div></div></form><button class="btn btn-default">Save Changes</button>',
 
     "die-animation" : "<div class='die-animation'></div>",
