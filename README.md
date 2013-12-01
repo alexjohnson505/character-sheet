@@ -3,9 +3,7 @@ D&D Digital Character Sheet
 
 # TODO:
 
-- Write in local saving functionality
-- Setup API
-- Icon support
+- Icon support?
 - Pulldown for selecting Attribute
 
 # Bugs:

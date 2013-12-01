@@ -30,7 +30,7 @@ function editSkill() {
     var data = [];
     data['formRows'] = [
         {'key' : 'name',
-         'label' : 'Spell Name',
+         'label' : 'Skill Name',
          'value' : skillData['name'],
          'placeholder' : '',
         },
@@ -45,7 +45,7 @@ function editSkill() {
          'placeholder' : '',
         },
         {'key' : 'icon',
-         'Icon' : 'yeah',
+         'label' : 'Icon',
          'value' : skillData['icon'],
          'placeholder' : '',
         }
@@ -111,6 +111,11 @@ function editSpell() {
         {'key' : 'description',
          'label' : 'Description',
          'value' : spellData['description'],
+         'placeholder' : '',
+        },
+        {'key' : 'damage',
+         'label' : 'Damage Die',
+         'value' : spellData['damage'],
          'placeholder' : '',
         },
         {'key' : 'damage-type',

@@ -2,7 +2,8 @@ var templates = {
     "viewSpell" :
         '<table class="table table-hover"><tr><td>Name</td><td>{{name}}</td></tr>\
         <tr><td>Description</td><td>{{description}}</td></tr>\
-        <tr><td>Damage Typ</td><td>{{damage-type}}</td></tr>\
+        <tr><td>Damage Die</td><td>{{damage}}</td></tr>\
+        <tr><td>Damage Type</td><td>{{damage-type}}</td></tr>\
         <tr><td>Attribute</td><td>{{attribute}}</td></tr>\
         <tr><td>Attribute Mod</td><td>{{attributeMod}}</td></tr>\
         <tr><td>Spell DC</td><td>{{spellDC}}</td></tr></table>',
