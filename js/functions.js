@@ -1,10 +1,11 @@
 // Populate DOM with character specific data
 function renderCharacterData (){
-    if(typeof(Storage)!=="undefined") {
+    // Load previous character save if exists
+    // Otherwise use default character data
+    if(localStorage.characterData){
         characterData = JSON.parse(localStorage.characterData);
-    } else {
-        alert("Could not find saved character. Loading default character");
     }
+
     // Stats
     $('#character .panel-body').html(renderCharacterStats())
     // Abilities
