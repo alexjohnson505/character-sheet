@@ -127,6 +127,14 @@ $.fn.form = function() {
     return formData;
 };
 
+// saves form data to specific character category
+function saveType(target){
+    var data = $('#editForm').form();
+    target[data.name] = data;
+    console.log(data);
+    saveData();
+}
+
 // Store current character to local storage
 function saveData() {
     if(typeof(Storage)!=="undefined") {

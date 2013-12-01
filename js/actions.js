@@ -64,10 +64,7 @@ function newSkill() {
 
 // Saves user-entered data to characterData
 function saveSkill() {
-    var data = $('#editForm').form();
-    characterData.skills[data.name] = data;
-    console.log(data);
-    saveData();
+    saveType(characterData.skills);
 }
 
 // roll a skill check
@@ -76,7 +73,6 @@ function rollSkill (){
     skillData['roll'] = skillData['baseRoll'] + skillData['attributeMod'];
     dieAnimation(Mustache.render(templates.rollMods, skillData) + Mustache.render(templates.dmPrompt, msgForDM));
 }
-
 
 /**
  * SPELLS
@@ -155,10 +151,7 @@ function newSpell() {
 
 // Saves user-entered data to characterData
 function saveSpell() {
-    var data = $('#editForm').form();
-    characterData.spells[data.name] = data;
-    console.log(data);
-    saveData();
+    saveType(characterData.spells);
 }
 
 /**
@@ -174,7 +167,6 @@ function viewAttack (target){
     openModal("Make an Attack", Mustache.render(templates.viewAttack, attackData));
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Attack"}));
 }
-
 
 // edit the details of an attack
 function editAttack() {
@@ -277,10 +269,7 @@ function newAttack() {
 
 // Saves user-entered data to characterData
 function saveAttack() {
-    var data = $('#editForm').form();
-    characterData.attacks[data.name] = data;
-    console.log(data);
-    saveData();
+    saveType(characterData.attacks);
 }
 
 // edit ability scores
@@ -311,10 +300,26 @@ function editAbility (target) {
 // Saves user-entered data to characterData
 function saveAbility() {
     var data = $('#editForm').form();
-    data['ability'] = ability;
-    console.log(data);
+    data['ability'] = ability;    
+    characterData.abilities[ability] = data['name'];
+    saveData();
 }
 
+function saveCharacter(){
+    var data = $('#character form').form()
+
+    // parse data
+    characterData['name'] = data['name']
+    characterData['class'] = data['class']
+    characterData['race'] = data['race']
+
+    // Remove non-numeric entries from HP/AC
+    characterData['hp'] = data['hp'].replace(/\D/g,'');
+    characterData['ac'] = data['ac'].replace(/\D/g,'');
+
+    saveData();
+    
+}
 
 function importCharacter() {
     openModal("Import Character", Mustache.render(templates.importCharacter));

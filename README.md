@@ -5,6 +5,8 @@ D&D Digital Character Sheet
 
 - Icon support?
 - Pulldown for selecting Attribute
+- form validation
+- Functionality: delete a stat
 
 # Bugs:
 
