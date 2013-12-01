@@ -6,7 +6,7 @@
 // view the details of a skill
 function viewSkill (target) {
     // global variable - saves last used skill
-    skillData = getSkill(target);
+    skillData = characterData.skills[target];
 
     skillData['title'] = "Skill check";
     skillData['rollcomps'] = [
@@ -83,7 +83,7 @@ function rollSkill (){
 // view the details of a spell
 function viewSpell (target){
     // global variable - saves last used spell
-    spellData = getSpell(target);
+    spellData = characterData.spells[target];
     spellData['spellDC'] = 10 + getAttributeMod(spellData.attribute);
     spellData['attributeMod'] = getAttributeMod(spellData.attribute);
 
@@ -149,7 +149,7 @@ function saveSpell() {
 // view the details of an attack
 function viewAttack (target){
     // global variable - saves last used attack
-    attackData = getAttack(target);
+    attackData = characterData.attacks[target];
     attackData['attributeMod'] = getAttributeMod(attackData.attribute);
 
     openModal("Make an Attack", Mustache.render(templates.viewAttack, attackData));

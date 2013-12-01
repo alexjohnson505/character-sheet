@@ -56,8 +56,11 @@ function renderCharacterAbilities(){
 // Given an associative array and template name, renders HTML tables rows
 function tabelizeData (category, template){
     var output = "";
-    for (var i = category.length - 1; i >= 0; i--) {
-        output += Mustache.render(templates[template], category[i]);
+
+    // create list of names in category. Use to iterate through
+    keys = Object.keys(category);
+    for (var i = keys.length - 1; i >= 0; i--) {
+        output += Mustache.render(templates[template], category[keys[i]]);
     };
     return output;
 }
@@ -109,31 +112,7 @@ function dieAnimation(result){
     }, 900);
 }
 
-// Find the skill
-function getSkill(target){
-    for (var i = characterData.skills.length - 1; i >= 0; i--) {
-        if (characterData.skills[i].name == target) {
-            return characterData.skills[i];
-        }
-    };
-}
-// Find the spell
-function getSpell(target){
-    for (var i = characterData.spells.length - 1; i >= 0; i--) {
-        if (characterData.spells[i].name == target) {
-            return characterData.spells[i];
-        }
-    };
-}
-// Find the attack
-function getAttack(target){
-    for (var i = characterData.attacks.length - 1; i >= 0; i--) {
-        if (characterData.attacks[i].name == target) {
-            return characterData.attacks[i];
-        }
-    };
-}
-
+// Returns array of all name/value pairs in a form
 $.fn.form = function() {
     var formData = {};
     this.find('[name]').each(function() {
