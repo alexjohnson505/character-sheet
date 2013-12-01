@@ -59,7 +59,7 @@ var characterData = {
             "damage-type": "bludgeoning",
             "proficient" : true,
             "icon": "fa-thumbs-up"
-            } 
+            }
         },
     "spells" : {
         "fireball" : {

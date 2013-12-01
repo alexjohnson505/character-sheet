@@ -28,7 +28,7 @@ var templates = {
     "footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
     "abilityScore" : '<tr onclick="editAbility(\'{{attributeName}}\');"><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>',
 
-    "editForm" : 
+    "editForm" :
         '<form id="editForm" class="form-horizontal" role="form">\
         {{{custom}}}\
         {{#formRows}}\
@@ -46,6 +46,9 @@ var templates = {
     "characterStats" : '<div class="img-thumbnail"><i class="fa fa-picture-o"></i></div><form class="form-horizontal"><div class="form-group"><label class="col-sm-4 control-label">Name</label><div class="col-sm-8"><input type="name" class="form-control" value="{{name}}"></input></div><label class="col-sm-4 control-label">Class</label><div class="col-sm-8"><input type="class" class="form-control" value="{{class}}""></input></div><label class="col-sm-4 control-label" >Race</label><div class="col-sm-8"><input type="email" class="form-control" value="{{race}}"></input></div><label class="col-sm-4 control-label"><i class="fa fa-heart"></i> HP</label><div class="col-sm-8"><input type="currentHP" class="form-control" value="{{currentHP}}"></input></div><label class="col-sm-4 control-label"><i class="fa fa-shield"></i>AC</label><div class="col-sm-8"><input type="currentAC" class="form-control" value="{{currentAC}}"></input></div></div></form><button class="btn btn-default">Save Changes</button>',
 
     "die-animation" : "<div class='die-animation'></div>",
+
+    "exportCharacter" : '<p>Instructions go here</p><textarea class="form-control" rows="6">{{data}}</textarea>',
+    "importCharacter" : '<p>Instructions go here</p><textarea class="form-control" rows="6" placeholder="Paste Data Here"></textarea><button onclick="loadCharacter();" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>',
 
     "skill"  :  '<tr onclick="viewSkill(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',
     "attack" :  '<tr onclick="viewAttack(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',

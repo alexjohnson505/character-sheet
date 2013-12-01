@@ -48,14 +48,10 @@ $( document ).ready(function() {
 
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Create New Character</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Character <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Current Character</a></li>
-        </ul>
-      </li>
+      <li><a onclick="importCharacter();">Import Character</a></li>
+      <li><a onclick="exportCharacter();">Export Character</a></li>
     </ul>
-  </div><!-- /.navbar-collapse -->
+  </div>
 </nav>
 
 <div id="character" class="panel panel-default">
@@ -93,7 +89,7 @@ $( document ).ready(function() {
     <div class="panel-body">
         <table class="table table-hover">
 		</table>
-		
+
     </div>
 </div>
 
@@ -104,7 +100,7 @@ $( document ).ready(function() {
     <div class="panel-body">
         <table class="table table-hover">
     </table>
-    
+
     </div>
 </div>
 
