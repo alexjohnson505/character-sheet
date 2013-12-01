@@ -36,31 +36,22 @@ function viewSkill (target) {
 
 // edit the details of a skill
 function editSkill(target) {
-    var skill;
-
-    // Find the skill
-    for (var i = characterData.skills.length - 1; i >= 0; i--) {
-        if (characterData.skills[i].name == target) {
-            skill = characterData.skills[i];
-        }
-    };
-
     var data = [];
     data['formRows'] = [
         {'label' : 'Skill Name',
-         'value' : skill['name'],
+         'value' : skillData['name'],
          'placeholder' : '',
         },
         {'label' : 'Attribute',
-         'value' : skill['attribute'],
+         'value' : skillData['attribute'],
          'placeholder' : '',
         },
         {'label' : 'Description',
-         'value' : skill['description'],
+         'value' : skillData['description'],
          'placeholder' : '',
         },
         {'Icon' : 'yeah',
-         'value' : skill['icon'],
+         'value' : skillData['icon'],
          'placeholder' : '',
         }
     ]
@@ -105,8 +96,30 @@ function viewSpell (target){
 }
 
 // edit the detauls of a spell
-function editSpell() {
-    alert("functionality coming soon");
+function editSpell(target) {
+
+    var data = [];
+    data['formRows'] = [
+        {'label' : 'Spell Name',
+         'value' : spellData['name'],
+         'placeholder' : '',
+        },
+        {'label' : 'Attribute',
+         'value' : spellData['attribute'],
+         'placeholder' : '',
+        },
+        {'label' : 'Description',
+         'value' : spellData['description'],
+         'placeholder' : '',
+        },
+        {'Icon' : 'yeah',
+         'value' : spellData['icon'],
+         'placeholder' : '',
+        }
+    ]
+
+    $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], data));
 }
 
 // roll the damage of a spell
@@ -146,7 +159,33 @@ function viewAttack (target){
 
 // edit the details of an attack
 function editAttack() {
-    alert("functionality coming soon");
+    
+    var data = [];
+    data['formRows'] = [
+        {'label' : 'Attack Name',
+         'value' : attackData['name'],
+         'placeholder' : '',
+        },
+        {'label' : 'Description',
+         'value' : attackData['description'],
+         'placeholder' : '',
+        },
+        {'label' : 'Damage',
+         'value' : attackData['damage'],
+         'placeholder' : '',
+        },
+        {'label' : 'Attribute',
+         'value' : attackData['attribute'],
+         'placeholder' : '',
+        },
+        {'label' : 'Icon',
+         'value' : attackData['icon'],
+         'placeholder' : '',
+        }        
+    ]
+
+    $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], data));
 }
 
 // roll the to-hit of an attack, prompt for Hit or Miss
