@@ -3,7 +3,6 @@ D&D Digital Character Sheet
 
 # TODO:
 
-- Convert Data to key-value array (especially Skills, Attributes)
 - Write in local saving functionality
 - Setup API
 - Icon support
