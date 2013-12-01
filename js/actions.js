@@ -26,7 +26,7 @@ function viewSkill (target) {
 }
 
 // edit the details of a skill
-function editSkill(target) {
+function editSkill() {
     var data = [];
     data['formRows'] = [
         {'label' : 'Skill Name',
@@ -49,6 +49,18 @@ function editSkill(target) {
 
     $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], data));
+}
+
+// create a new skill
+function newSkill() {
+    skillData = [];
+    openModal("Create a New Skill", Mustache.render(templates.viewSkill, skillData));
+    editSkill();
+}
+
+// Saves user-entered data to characterData
+function saveSkill() {
+
 }
 
 // roll a skill check
@@ -75,7 +87,7 @@ function viewSpell (target){
 }
 
 // edit the detauls of a spell
-function editSpell(target) {
+function editSpell() {
     var data = [];
     data['formRows'] = [
         {'label' : 'Spell Name',
@@ -109,6 +121,18 @@ function rollSpell (){
     spellData['sum'] = sumArray(spellData['rollcomps'], 'number');
     msgForDM = {'message' : "Report this damage and the Spell DC to the DM."};
     dieAnimation(Mustache.render(templates.rollMods, spellData) + Mustache.render(templates.dmPrompt, msgForDM));
+}
+
+// create a new spell
+function newSpell() {
+    spellData = [];
+    openModal("Create a New Spell", Mustache.render(templates.viewspell, spellData));
+    editSpell();
+}
+
+// Saves user-entered data to characterData
+function saveSpell() {
+
 }
 
 /**
@@ -213,18 +237,29 @@ function attackConfirmation (status){
         $('#roll-modal .modal-prompt').append(output);
     }, rollTime);
 }
+
+// create a new attack
+function newAttack() {
+    attackData = [];
+    openModal("Create a New Attack", Mustache.render(templates.viewattack, attackData));
+    editAttack();
+}
+
+// Saves user-entered data to characterData
+function saveAttack() {
+
+}
+
 // edit ability scores
 function editAbility (target) {
     var ability = [];
 
     var data = [];
 
+    data['custom'] = '<div class="form-group"><label class="col-sm-3 control-label">Attribute</label><div class="col-sm-9">' +
+'<p class="form-control-static">'+target+'</p></div></div>';
+
     data['formRows'] = [
-        {
-         'label' : 'Attribute',
-         'value' : target,
-         'placeholder' : '',
-        },
         {
          'label' : 'Update Value',
          'value' : characterData.abilities[target],

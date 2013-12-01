@@ -77,7 +77,7 @@ $( document ).ready(function() {
 <div id="skills" class="panel panel-default">
     <div class="panel-heading">
       <h2>Skills</h2>
-      <span class="btn btn-default" onclick="">Add Skill <i class="fa fa-plus"></i></span>
+      <span class="btn btn-default" onclick="newSkill()">Add Skill <i class="fa fa-plus"></i></span>
       </div>
     <div class="panel-body">
 		<table class="table table-hover"></table>
@@ -87,7 +87,8 @@ $( document ).ready(function() {
 <div id="attacks" class="panel panel-default">
     <div class="panel-heading">
       <h2>Attacks</h2>
-      <span type="button" class="btn btn-default" onclick="">Add Attack  <i class="fa fa-plus"></i></span>
+      <span type="button" class="btn btn-default" onclick="newSpell()">Spell  <i class="fa fa-plus"></i></span>
+      <span type="button" class="btn btn-default" onclick="newAttack()">Attack  <i class="fa fa-plus"></i></span>
     </div>
     <div class="panel-body">
         <table class="table table-hover">

@@ -109,8 +109,8 @@ function dieAnimation(result){
     }, 900);
 }
 
+// Find the skill
 function getSkill(target){
-    // Find the skill
     for (var i = characterData.skills.length - 1; i >= 0; i--) {
         if (characterData.skills[i].name == target) {
             return characterData.skills[i];

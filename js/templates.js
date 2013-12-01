@@ -30,6 +30,7 @@ var templates = {
 
     "editForm" : 
         '<form class="form-horizontal" role="form">\
+        {{{custom}}}\
         {{#formRows}}\
           <div class="form-group">\
             <label class="col-sm-3 control-label">{{label}}</label>\
