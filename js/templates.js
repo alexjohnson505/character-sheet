@@ -23,7 +23,7 @@ var templates = {
     "confToHit" : '<a class="rollagain" onclick="rollAttack()">Roll Again</a><br><div class="hit-or-miss"><button type="button" class="btn btn-primary" onclick="attackConfirmation(\'hit\')";>Hit</button><button type="button" class="btn btn-danger" onclick="attackConfirmation(\'miss\')";>Miss</button></div>',
     "rollAttack" : "Your attack Hits!!! You inflict {{inflictedDamage}} Damage. <br> Calculated by rolling {{damageRoll}} ({{damage}} die) + {{attributeMod}} Ability Mod",
 
-    "edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-default" onclick="edit{{type}}()";>Edit</button><button type="button" class="btn btn-danger" onclick="roll{{type}}()";>Roll</button></div>',
+    "edit-or-roll" : '<div class="hit-or-miss"><button type="button" class="btn btn-default" onclick="edit{{type}}(\'{{name}}\')";>Edit</button><button type="button" class="btn btn-danger" onclick="roll{{type}}()";>Roll</button></div>',
 
     "footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
     "abilityScore" : '<tr onclick="editAbility(\'{{attributeName}}\');"><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>',
@@ -53,6 +53,20 @@ var templates = {
             </div>\
           </div>\
         </form>',
+    "editForm" : 
+        '<form class="form-horizontal" role="form">\
+        {{#formRows}}\
+          <div class="form-group">\
+            <label class="col-sm-3 control-label">{{label}}</label>\
+            <div class="col-sm-9">\
+              <input class="form-control" value="{{value}}" placeholder="{{placeholder}}">\
+            </div>\
+          </div>\
+        {{/formRows}}\
+        </form>',
+
+    "cancel-or-save" : '<div class="hit-or-miss"><button type="button" class="btn btn-default" onclick="" ;="">Cancel</button><button type="button" class="btn btn-primary" onclick="" ;="">Save</button></div>',
+
     "characterStats" : '<div class="img-thumbnail"><i class="fa fa-picture-o"></i></div><form class="form-horizontal"><div class="form-group"><label class="col-sm-4 control-label">Name</label><div class="col-sm-8"><input type="name" class="form-control" value="{{name}}"></input></div><label class="col-sm-4 control-label">Class</label><div class="col-sm-8"><input type="class" class="form-control" value="{{class}}""></input></div><label class="col-sm-4 control-label" >Race</label><div class="col-sm-8"><input type="email" class="form-control" value="{{race}}"></input></div><label class="col-sm-4 control-label"><i class="fa fa-heart"></i> HP</label><div class="col-sm-8"><input type="currentHP" class="form-control" value="{{currentHP}}"></input></div><label class="col-sm-4 control-label"><i class="fa fa-shield"></i>AC</label><div class="col-sm-8"><input type="currentAC" class="form-control" value="{{currentAC}}"></input></div></div></form><button class="btn btn-default">Save Changes</button>',
 
     "die-animation" : "<div class='die-animation'></div>",

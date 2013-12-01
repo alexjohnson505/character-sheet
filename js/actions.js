@@ -31,12 +31,42 @@ function viewSkill (target) {
     skillData['attributeMod'] = getAttributeMod(skillData['attribute']);
 
     openModal("Roll a Skill", Mustache.render(templates.viewSkill, skillData));
-    $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Skill"}));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Skill", name: skillData.name}));
 }
 
 // edit the details of a skill
-function editSkill() {
-    alert("functionality coming soon");
+function editSkill(target) {
+    var skill;
+
+    // Find the skill
+    for (var i = characterData.skills.length - 1; i >= 0; i--) {
+        if (characterData.skills[i].name == target) {
+            skill = characterData.skills[i];
+        }
+    };
+
+    var data = [];
+    data['formRows'] = [
+        {'label' : 'Skill Name',
+         'value' : skill['name'],
+         'placeholder' : '',
+        },
+        {'label' : 'Attribute',
+         'value' : skill['attribute'],
+         'placeholder' : '',
+        },
+        {'label' : 'Description',
+         'value' : skill['description'],
+         'placeholder' : '',
+        },
+        {'Icon' : 'yeah',
+         'value' : skill['icon'],
+         'placeholder' : '',
+        }
+    ]
+
+    $('#roll-modal .modal-body').html(Mustache.render(templates['editForm'], data));
+    $('#roll-modal .modal-prompt').html(Mustache.render(templates['cancel-or-save'], data));
 }
 
 // roll a skill check
