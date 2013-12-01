@@ -12,28 +12,28 @@ var characterData = {
         "CHA": 16,
         "INT": 6
     },
-    "skills" : [
-        {
+    "skills" : {
+        "athletics" : {
             "name": "athletics",
             "description": "Character's physical mobility.",
             "attribute" : "DEX",
             "icon": "fa-bolt"
         },
-        {
+        "perception" : {
             "name": "perception",
             "description": "Character's surrounding awareness.",
             "attribute" : "INT",
             "icon": "fa-eye"
         },
-        {
+        "concentration" : {
             "name": "concentration",
             "description": "Character's mental concentration when interrupted.",
             "attribute" : "CON",
             "icon": "fa-user"
         },
-    ],
-    "attacks" : [
-        {
+    },
+    "attacks" : {
+        "shortsword" : {
             "name": "shortsword",
             "attribute" : "STR",
             "description": "Wide swipe",
@@ -42,7 +42,7 @@ var characterData = {
             "proficient" : true,
             "icon": "fa-exclamation"
         },
-        {
+        "longbow" : {
             "name": "longbow",
             "attribute" : "DEX",
             "description": "Long wooden bow, capable of shooting up to 50 meters",
@@ -51,7 +51,7 @@ var characterData = {
             "proficient" : true,
             "icon": "fa-exclamation"
         },
-        {
+        "fists" : {
             "name": "fists",
             "attribute" : "DEX",
             "description": "Linen-wrapped fists, ready for pummeling",
@@ -59,10 +59,10 @@ var characterData = {
             "damage-type": "bludgeoning",
             "proficient" : true,
             "icon": "fa-thumbs-up"
-        }
-    ],
-    "spells" : [
-        {
+            } 
+        },
+    "spells" : {
+        "fireball" : {
             "name": "fireball",
             "attribute" : "WIS",
             "description": "Wide swipe",
@@ -71,7 +71,7 @@ var characterData = {
             "proficient" : true,
             "icon": "fa-bolt"
         },
-    ],
+    },
 }
 
 var changeHistory = [{
