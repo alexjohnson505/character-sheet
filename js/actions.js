@@ -5,25 +5,16 @@
 
 // view the details of a skill
 function viewSkill (target) {
-    var skill;
-
-    // Find the skill
-    for (var i = characterData.skills.length - 1; i >= 0; i--) {
-        if (characterData.skills[i].name == target) {
-            skill = characterData.skills[i];
-        }
-    };
-
     // global variable - saves last used skill
-    skillData = skill;
+    skillData = getSkill(target);
 
     skillData['title'] = "Skill check";
     skillData['rollcomps'] = [
         {'number' : roll("1d20"),
          'desc' : '<strong>base</strong> (1d20)',
          'spec' : ''},
-        {'number' : getAttributeMod(skill.attribute),
-         'desc' : '<strong>'+skill.attribute+'</strong> mod',
+        {'number' : getAttributeMod(skillData.attribute),
+         'desc' : '<strong>'+skillData.attribute+'</strong> mod',
          'spec' : '+'}
     ]
 
@@ -65,9 +56,6 @@ function rollSkill (){
     msgForDM = {'message' : "Report this result to your DM."};
     skillData['roll'] = skillData['baseRoll'] + skillData['attributeMod'];
     dieAnimation(Mustache.render(templates.rollMods, skillData) + Mustache.render(templates.dmPrompt, msgForDM));
-
-
-    // $('#roll-modal .modal-prompt').html(Mustache.render(templates.rollSkill, skillData));
 }
 
 
@@ -77,19 +65,10 @@ function rollSkill (){
 
 // view the details of a spell
 function viewSpell (target){
-    var spell;
-
-    // Find the spell
-    for (var i = characterData.spells.length - 1; i >= 0; i--) {
-        if (characterData.spells[i].name == target) {
-            spell = characterData.spells[i];
-        }
-    };
-
     // global variable - saves last used spell
-    spellData = spell;
-    spellData['spellDC'] = 10 + getAttributeMod(spell.attribute);
-    spellData['attributeMod'] = getAttributeMod(spell.attribute);
+    spellData = getSpell(target);
+    spellData['spellDC'] = 10 + getAttributeMod(spellData.attribute);
+    spellData['attributeMod'] = getAttributeMod(spellData.attribute);
 
     openModal("Cast a Spell", Mustache.render(templates.viewSpell, spellData));
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Spell"}));
@@ -97,7 +76,6 @@ function viewSpell (target){
 
 // edit the detauls of a spell
 function editSpell(target) {
-
     var data = [];
     data['formRows'] = [
         {'label' : 'Spell Name',
@@ -139,18 +117,9 @@ function rollSpell (){
 
 // view the details of an attack
 function viewAttack (target){
-    var attack;
-
-    // Find the attack
-    for (var i = characterData.attacks.length - 1; i >= 0; i--) {
-        if (characterData.attacks[i].name == target) {
-            attack = characterData.attacks[i];
-        }
-    };
-
     // global variable - saves last used attack
-    attackData = attack;
-    attackData['attributeMod'] = getAttributeMod(attack.attribute);
+    attackData = getAttack(target);
+    attackData['attributeMod'] = getAttributeMod(attackData.attribute);
 
     openModal("Make an Attack", Mustache.render(templates.viewAttack, attackData));
     $('#roll-modal .modal-prompt').html(Mustache.render(templates['edit-or-roll'], {type: "Attack"}));

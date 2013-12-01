@@ -108,3 +108,28 @@ function dieAnimation(result){
         $('#roll-modal .modal-prompt').html(result);
     }, 900);
 }
+
+function getSkill(target){
+    // Find the skill
+    for (var i = characterData.skills.length - 1; i >= 0; i--) {
+        if (characterData.skills[i].name == target) {
+            return characterData.skills[i];
+        }
+    };
+}
+// Find the spell
+function getSpell(target){
+    for (var i = characterData.spells.length - 1; i >= 0; i--) {
+        if (characterData.spells[i].name == target) {
+            return characterData.spells[i];
+        }
+    };
+}
+// Find the attack
+function getAttack(target){
+    for (var i = characterData.attacks.length - 1; i >= 0; i--) {
+        if (characterData.attacks[i].name == target) {
+            return characterData.attacks[i];
+        }
+    };
+}
