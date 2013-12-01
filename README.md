@@ -6,7 +6,8 @@ D&D Digital Character Sheet
 - Convert Data to key-value array (especially Skills, Attributes)
 - Write in local saving functionality
 - Setup API
-- 
+- Icon support
+- Move save button to bottom of Modals
 
 # Bugs:
 

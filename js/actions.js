@@ -209,10 +209,25 @@ function attackConfirmation (status){
 function editAbility (target) {
     var ability = [];
 
-    ability["attribute"] = target;
-    ability["currentValue"] = characterData.abilities[target];
+    var data = [];
+
+    data['formRows'] = [
+        {
+         'label' : 'Attribute',
+         'value' : target,
+         'placeholder' : '',
+        },
+        {
+         'label' : 'Update Value',
+         'value' : characterData.abilities[target],
+         'placeholder' : '',
+        },
+        {
+         'label' : 'Comments',
+         'value' : "",
+         'placeholder' : '',
+        }
+    ]
     
-    openModal("Edit an Ability Score", Mustache.render(templates.editAbility, ability));
+    openModal("Edit an Ability Score", Mustache.render(templates['editForm'], data));
 }
-
-

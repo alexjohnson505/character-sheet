@@ -27,32 +27,7 @@ var templates = {
 
     "footerClose" : '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>',
     "abilityScore" : '<tr onclick="editAbility(\'{{attributeName}}\');"><td>{{attributeName}}</td><td>{{attribute}}</td><td>{{attributeMod}}</td></tr>',
-    "editAbility" : 
-        '<form class="form-horizontal" role="form">\
-          <div class="form-group">\
-            <label class="col-sm-4 control-label">Attribute</label>\
-            <div class="col-sm-8">\
-              <p class="form-control-static">{{attribute}}</p>\
-            </div>\
-          </div>\
-          <div class="form-group">\
-            <label class="col-sm-4 control-label">Updated Value</label>\
-            <div class="col-sm-8">\
-              <input class="form-control" value="{{currentValue}}">\
-            </div>\
-          </div>\
-        <div class="form-group">\
-            <label class="col-sm-4 control-label">Comments</label>\
-            <div class="col-sm-8">\
-              <input class="form-control" placeholder="Acquired hat of Fortitude">\
-            </div>\
-          </div>\
-          <div class="form-group">\
-            <div class="col-sm-offset-2 col-sm-10">\
-              <button type="submit" class="btn btn-primary">Update</button>\
-            </div>\
-          </div>\
-        </form>',
+
     "editForm" : 
         '<form class="form-horizontal" role="form">\
         {{#formRows}}\
