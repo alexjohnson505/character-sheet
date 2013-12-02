@@ -3,7 +3,7 @@ D&D Digital Character Sheet
 
 # TODO:
 
-- Icon support?
+- Icon support? (standardize skills/feats/spells)
 - Pulldown for selecting Attribute
 - form validation
 - Functionality: delete a stat

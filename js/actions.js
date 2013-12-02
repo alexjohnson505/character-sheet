@@ -300,7 +300,7 @@ function editAbility (target) {
 // Saves user-entered data to characterData
 function saveAbility() {
     var data = $('#editForm').form();
-    data['ability'] = ability;    
+    data['ability'] = ability;
     characterData.abilities[ability] = data['name'];
     saveData();
 }
@@ -318,7 +318,7 @@ function saveCharacter(){
     characterData['ac'] = data['ac'].replace(/\D/g,'');
 
     saveData();
-    
+
 }
 
 function importCharacter() {

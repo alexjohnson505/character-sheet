@@ -42,8 +42,8 @@ var characterData = {
             "proficient" : true,
             "icon": "fa-exclamation"
         },
-        "longbow" : {
-            "name": "Composite longbow",
+        "composite longbow" : {
+            "name": "composite longbow",
             "attribute" : "DEX",
             "description": "Long wooden bow, shoots wooden arrows up to a range of 50 meters",
             "damage": "1d8",
