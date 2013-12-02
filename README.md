@@ -7,6 +7,9 @@ D&D Digital Character Sheet
 - Pulldown for selecting Attribute
 - form validation
 - Functionality: delete a stat
+- uniform buttons
+- history functionality
+- move add buttons to bottom
 
 # Bugs:
 
