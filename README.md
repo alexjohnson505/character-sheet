@@ -10,6 +10,9 @@ D&D Digital Character Sheet
 - uniform buttons
 - history functionality
 - move add buttons to bottom
+- HP fraction
+- character deets: save on change
+- Select your avatar
 
 # Bugs:
 
