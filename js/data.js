@@ -16,20 +16,17 @@ var characterData = {
         "athletics" : {
             "name": "athletics",
             "description": "Measure of character's physical mobility.",
-            "attribute" : "DEX",
-            "icon": "fa-bolt"
+            "attribute" : "DEX"
         },
         "perception" : {
             "name": "perception",
             "description": "Character's surrounding awareness (passive).",
-            "attribute" : "INT",
-            "icon": "fa-eye"
+            "attribute" : "INT"
         },
         "concentration" : {
             "name": "concentration",
             "description": "Character's mental concentration, determines interruption when hit while casting.",
-            "attribute" : "CON",
-            "icon": "fa-user"
+            "attribute" : "CON"
         },
     },
     "attacks" : {
@@ -39,8 +36,7 @@ var characterData = {
             "description": "A short-bladed iron sword, used for close range combat.",
             "damage": "1d6",
             "damage-type": "piercing",
-            "proficient" : true,
-            "icon": "fa-exclamation"
+            "proficient" : true
         },
         "composite longbow" : {
             "name": "composite longbow",
@@ -48,8 +44,7 @@ var characterData = {
             "description": "Long wooden bow, shoots wooden arrows up to a range of 50 meters",
             "damage": "1d8",
             "damage-type": "piercing",
-            "proficient" : true,
-            "icon": "fa-exclamation"
+            "proficient" : true
         },
         "fists" : {
             "name": "fists",
@@ -57,8 +52,7 @@ var characterData = {
             "description": "Linen-wrapped fists, useful for hand-to-hand combat.",
             "damage": "1d4",
             "damage-type": "bludgeoning",
-            "proficient" : true,
-            "icon": "fa-thumbs-up"
+            "proficient" : true
             }
         },
     "spells" : {
@@ -68,8 +62,7 @@ var characterData = {
             "description": "A massive ball of searing fire shoots out, exploding on impact hurting all within 20 feet.",
             "damage": "12d6",
             "damage-type": "fire",
-            "proficient" : true,
-            "icon": "fa-bolt"
+            "proficient" : true
         },
     },
 }

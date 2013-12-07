@@ -61,8 +61,8 @@ var templates = {
     "exportCharacter" : '<p>Instructions go here</p><textarea class="form-control" rows="6">{{data}}</textarea>',
     "importCharacter" : '<p>Instructions go here</p><textarea class="form-control" rows="6" placeholder="Paste Data Here"></textarea><button onclick="loadCharacter();" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>',
 
-    "skill"  :  '<tr onclick="viewSkill(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',
-    "attack" :  '<tr onclick="viewAttack(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',
-    "spell"  :  '<tr onclick="viewSpell(\'{{name}}\');"><td><i class="fa {{icon}}"></td><td>{{name}}</td><td class="die"></td></tr>',
+    "skill"  :  '<tr onclick="viewSkill(\'{{name}}\');"><td><i class="fa fa-key"></td><td>{{name}}</td><td class="die"></td></tr>',
+    "attack" :  '<tr onclick="viewAttack(\'{{name}}\');"><td><i class="fa fa-gavel"></td><td>{{name}}</td><td class="die"></td></tr>',
+    "spell"  :  '<tr onclick="viewSpell(\'{{name}}\');"><td><i class="fa fa-bolt"></td><td>{{name}}</td><td class="die"></td></tr>',
     "history"  :  '<tr><td>{{target}}</td><td>{{change}}</td><td>{{description}}</td></tr>'
 }

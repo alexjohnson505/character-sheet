@@ -43,11 +43,6 @@ function editSkill() {
          'label' : 'Description',
          'value' : skillData['description'],
          'placeholder' : '',
-        },
-        {'key' : 'icon',
-         'label' : 'Icon',
-         'value' : skillData['icon'],
-         'placeholder' : '',
         }
     ]
 
@@ -118,12 +113,6 @@ function editSpell() {
          'label' : 'Damage Type',
          'value' : spellData['damage-type'],
          'placeholder' : '',
-        },
-        {
-         'key' : 'icon',
-         'label' : 'Icon',
-         'value' : spellData['icon'],
-         'placeholder' : '',
         }
     ]
 
@@ -191,10 +180,6 @@ function editAttack() {
         {'key' : 'attribute',
          'label' : 'Attribute',
          'value' : attackData['attribute'],
-         'placeholder' : '',
-        },
-        {'label' : 'Icon',
-         'value' : attackData['icon'],
          'placeholder' : '',
         }
     ]
