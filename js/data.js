@@ -3,6 +3,7 @@ var characterData = {
     "class": "Fighter",
     "race": "Half-Orc",
     "hp": 25,
+    "maxhp": 25,
     "ac": 12,
     "abilities" : {
         "STR": 18,
