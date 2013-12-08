@@ -290,6 +290,7 @@ function saveAbility() {
     saveData();
 }
 
+// save character data
 function saveCharacter(){
     var data = $('#character form').form()
 
@@ -304,6 +305,19 @@ function saveCharacter(){
 
     saveData();
 
+}
+
+// Replace current character with default character template
+function createCharacter() {
+    var r = confirm("Are you sure you want to create a new character? Creating a new character will delete your current character, and load the default character template.");
+
+    if (r==true)
+    {
+        localStorage.clear();
+        characterData = originalCharacterData;
+        renderCharacterData();
+
+    }  
 }
 
 function importCharacter() {

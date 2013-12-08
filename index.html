@@ -24,6 +24,11 @@
 $( document ).ready(function() {
     /* Load in character data once DOM is ready */
     console.log( "Document Ready!" );
+
+    // saves template character
+    originalCharacterData = characterData;
+
+    // Render current character to screen
     renderCharacterData();
 });
 </script>
@@ -47,7 +52,7 @@ $( document ).ready(function() {
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Create New Character</a></li>
+      <li><a onclick="createCharacter();">Create New Character</a></li>
       <li><a onclick="importCharacter();">Import Character</a></li>
       <li><a onclick="exportCharacter();">Export Character</a></li>
     </ul>
