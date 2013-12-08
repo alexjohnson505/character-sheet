@@ -3,11 +3,11 @@ D&D Digital Character Sheet
 
 # TODO:
 - Functionality: delete a stat
-- uniform buttons
 - move add buttons to bottom
 
 
 # STRETCH Goals
+- uniform buttons
 - character deets: save on change
 - Select your avatar
 - history functionality
