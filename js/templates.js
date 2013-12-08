@@ -58,8 +58,8 @@ var templates = {
 
     "die-animation" : "<div class='die-animation'></div>",
 
-    "exportCharacter" : '<p>Instructions go here</p><textarea class="form-control" rows="6">{{data}}</textarea>',
-    "importCharacter" : '<p>Instructions go here</p><textarea class="form-control" rows="6" placeholder="Paste Data Here"></textarea><button onclick="loadCharacter();" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>',
+    "exportCharacter" : '<p>To save your character to a file - copy and paste the text below. Save to a text file on your local computer.</p><textarea class="form-control" rows="6">{{data}}</textarea>',
+    "importCharacter" : '<p>To import a character - paste the character save code into the box below, then select save.</p><textarea class="form-control" rows="6" placeholder="Paste Data Here"></textarea><button onclick="loadCharacter();" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>',
 
     "skill"  :  '<tr onclick="viewSkill(\'{{name}}\');"><td><i class="fa fa-key"></td><td>{{name}}</td><td class="die"></td></tr>',
     "attack" :  '<tr onclick="viewAttack(\'{{name}}\');"><td><i class="fa fa-gavel"></td><td>{{name}}</td><td class="die"></td></tr>',
