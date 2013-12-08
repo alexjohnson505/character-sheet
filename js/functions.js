@@ -17,7 +17,7 @@ function renderCharacterData (){
     // Spells (added to attacks table)
     $('#attacks table').append(tabelizeData(characterData.spells, "spell"));
     // Character change history
-    $('#history table').html(tabelizeData(changeHistory, "history"));
+    // $('#history table').html(tabelizeData(changeHistory, "history"));
 }
 
 // Returns character data formatted as an HTML form.

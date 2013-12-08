@@ -2,16 +2,17 @@ D&D Digital Character Sheet
 ==============
 
 # TODO:
-
-- Pulldown for selecting Attribute
-- form validation
 - Functionality: delete a stat
 - uniform buttons
-- history functionality
 - move add buttons to bottom
-- HP fraction
+
+
+# STRETCH Goals
 - character deets: save on change
 - Select your avatar
+- history functionality
+- Pulldown for selecting Attribute
+- form validation
 
 # Bugs:
 

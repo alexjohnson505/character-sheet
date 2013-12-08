@@ -67,19 +67,19 @@ var characterData = {
     },
 }
 
-var changeHistory = [{
-    "target" : "abilities.STR",
-    "change" : 1,
-    "description" : "Obtained helmet of strength",
-    "time" : "time",
-},{
-    "target" : "hp",
-    "change" : -4,
-    "description" : "Arrow damage",
-    "time" : "time",
-},{
-    "target" : "hp",
-    "change" : +12,
-    "description" : "Heal Spell",
-    "time" : "time",
-}]
+// var changeHistory = [{
+//     "target" : "abilities.STR",
+//     "change" : 1,
+//     "description" : "Obtained helmet of strength",
+//     "time" : "time",
+// },{
+//     "target" : "hp",
+//     "change" : -4,
+//     "description" : "Arrow damage",
+//     "time" : "time",
+// },{
+//     "target" : "hp",
+//     "change" : +12,
+//     "description" : "Heal Spell",
+//     "time" : "time",
+// }]
