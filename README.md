@@ -3,8 +3,6 @@ D&D Digital Character Sheet
 
 # TODO:
 - Functionality: delete a stat
-- move add buttons to bottom
-
 
 # STRETCH Goals
 - uniform buttons
