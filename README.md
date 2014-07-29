@@ -1,10 +1,7 @@
 D&D Digital Character Sheet
 ==============
 
-# TODO:
-- Functionality: delete a stat
-
-# Bugs:
+A single page webapp for recording and managing pen & paper game characters. This app was built as a user-testing case study for Northeastern's class in Human-Computer Interaction
 
 # Special Thanks
 Special thanks to:
