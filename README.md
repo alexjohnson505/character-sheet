@@ -4,14 +4,6 @@ D&D Digital Character Sheet
 # TODO:
 - Functionality: delete a stat
 
-# STRETCH Goals
-- uniform buttons
-- character deets: save on change
-- Select your avatar
-- history functionality
-- Pulldown for selecting Attribute
-- form validation
-
 # Bugs:
 
 # Special Thanks
